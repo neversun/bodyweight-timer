@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+time supporting app for traing purposes (bodyweight-training) on Jolla Sailfish OS
 
 
 %prep

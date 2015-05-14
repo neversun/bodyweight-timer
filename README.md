@@ -1,13 +1,9 @@
-**Not yet useable - under heavy development - WIP**
-
----
-
-#bodyweight-timer
+# bodyweight-timer
 
 time supporting app for traing purposes (bodyweight-training) on Jolla Sailfish OS
 
-## Features
-## Planned
+## Planned features
+* Prevent sleep mode **!**
 * Enable/Disable Sounds
 * Configuration of bell types for different actions
 * naming of exercises
