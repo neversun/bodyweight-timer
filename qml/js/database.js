@@ -8,7 +8,7 @@ var dbVersion="1.0";
 */
 function openDatabase() {
     try {
-        return LS.LocalStorage.openDatabaseSync("bodyweigthtimer","1.0","Database for bodyweigth-timer",100000);
+        return LS.LocalStorage.openDatabaseSync("bodyweighttimer","1.0","Database for bodyweight-timer",100000);
     } catch (err) {
         console.log("OpenDatabaseSync:"+err );
     }

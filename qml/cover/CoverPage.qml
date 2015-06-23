@@ -35,7 +35,7 @@ CoverBackground {
     Label {
         id: label
         anchors.centerIn: parent
-        text: "bodyweigth\nTimer"
+        text: "bodyweight\nTimer"
     }
 
 //    CoverActionList {
