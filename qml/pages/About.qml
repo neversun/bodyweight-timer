@@ -35,7 +35,7 @@ Page{
                 highlightColor: Theme.highlightColor
                 text: "Open Github"
                 onClicked: {
-                    Qt.openUrlExternally("https://github.com/neversun/bodyweigth-timer")
+                    Qt.openUrlExternally("https://github.com/neversun/bodyweight-timer")
                 }
                 width: parent.width/2
                 height: Theme.itemSizeMedium
