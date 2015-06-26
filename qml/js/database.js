@@ -60,7 +60,7 @@ function initializeDatabase() {
         db.transaction(
             function(tx) {
             tx.executeSql('CREATE TABLE IF NOT EXISTS exercises (exercise TEXT UNIQUE, value1Desc TEXT, value2Desc TEXT, value3Desc TEXT, value4Desc TEXT, value1 INT, value2 INT, value3 INT, value4 INT, explanation TEXT)');
-            tx.executeSql('INSERT INTO exercises (exercise) VALUES (?),(?),(?),(?),(?)', ['circleInterval','intervalSet','superSet','ladder','tabata']); }
+            tx.executeSql('INSERT INTO exercises (exercise) VALUES (?),(?),(?),(?),(?)', ['CircleInterval','IntervalSet','SuperSet','Ladder','Tabata']); }
         )
         } catch (err) {
             console.log("initializeDatabase.createTable:" + err);
@@ -72,11 +72,11 @@ function initializeDatabase() {
 /*  Sets the default values for all exercises
 */
 function defaultDatabaseValuesForAll() {
-    defaultDatabaseValuesFor('circleInterval');
-    defaultDatabaseValuesFor('intervalSet');
-    defaultDatabaseValuesFor('superSet');
-    defaultDatabaseValuesFor('ladder');
-    defaultDatabaseValuesFor('tabata');
+    defaultDatabaseValuesFor('CircleInterval');
+    defaultDatabaseValuesFor('IntervalSet');
+    defaultDatabaseValuesFor('SuperSet');
+    defaultDatabaseValuesFor('Ladder');
+    defaultDatabaseValuesFor('Tabata');
 }
 
 /*  Sets the default values for a exercise
@@ -95,19 +95,19 @@ function defaultDatabaseValuesFor(exercise) {
 
     //ε = empty (word)
     switch(exercise){
-    case "circleInterval":
+    case "CircleInterval":
         value1=1200; value2=0;value3=0;value4=0;value1Desc="duration";value2Desc="ε";value3Desc="ε";value4Desc="ε";explanation="Do as much as you can in the specified time without making a pause.\nAt least reduce pauses to a minimum.";
         break;
-    case "superSet":
+    case "SuperSet":
         value1=240; value2=3;value3=4;value4=0;value1Desc="duration per set";value2Desc="sets per exercise";value3Desc="number exercises";value4Desc="ε";explanation="In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the pair-exercise 1, and at repetition 6 to 12 pair-exercise 2. \nFirst pair-exercise should not cause you musle malfunction.";
         break;
-    case "intervalSet":
+    case "IntervalSet":
         value1=180; value2=3;value3=4;value4=0;value1Desc="duration per set";value2Desc="sets per exercise";value3Desc="number exercises";value4Desc="ε";explanation="In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.";
         break;
-    case "ladder":
+    case "Ladder":
         value1=450; value2=4;value3=0;value4=0;value1Desc="duration per exercise";value2Desc="exercises";value3Desc="ε";value4Desc="ε";explanation="Do 1 repetition of an exercise and then pause the time you needed for this one.\nThen do 2 repetitions and pause the time you needed now and so on.\nOn muscle malfunction reduce the repitions by 1, then by another and so on.\nAlready at 1 repition again and time is not over? Start a new ladder!";
         break;
-    case "tabata":
+    case "Tabata":
         value1=8; value2=20;value3=10;value4=3;value1Desc="rounds per exercise";value2Desc="duration of active time";value3Desc="duration of pause";value4Desc="number exercises";explanation="Do one set of exercises after another. While 'active time' move on. While 'pause time' pause.\nTry to find your ideal tempo (consistent repetitions).";
         break;
     }

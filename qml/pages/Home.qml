@@ -30,23 +30,23 @@ Page {
         ListModel {
             id: homeModel
             ListElement {
-                page: "circleInterval"
+                page: "CircleInterval"
                 title: "Circle interval"
             }
             ListElement {
-                page: "intervalSet"
+                page: "IntervalSet"
                 title: "Interval set"
             }
             ListElement {
-                page: "ladder"
+                page: "Ladder"
                 title: "Ladder"
             }
             ListElement {
-                page: "superSet"
+                page: "SuperSet"
                 title: "Super set"
             }
             ListElement {
-                page: "tabata"
+                page: "Tabata"
                 title: "Tabata"
             }
         }
@@ -60,7 +60,7 @@ Page {
             model: homeModel
 
             delegate: BackgroundItem {
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"), {page: model.page,title:model.title} )
+                onClicked: pageStack.push(Qt.resolvedUrl(model.page+".qml"), {page: model.page,title:model.title} )
                 width: root.width
                 Label {
                         text: model.title
