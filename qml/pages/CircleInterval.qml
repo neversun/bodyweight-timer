@@ -10,9 +10,17 @@ Page{
     property variant    page
     property variant    title
 
-    //  get parameters from DB
-    property variant    value1ReturnFromDB:     DB.getDatabaseValuesFor(page,"value1")
-    property int        value1:                 value1ReturnFromDB[0]
+    //  parameters from DB
+    property variant    value1ReturnFromDB;
+    property int        value1;
+
+    onStatusChanged: {
+        if(status === PageStatus.Active)
+        {
+            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
+            value1 = value1ReturnFromDB[0];
+        }
+    }
 
     //  page internal properties
     //current time
@@ -29,6 +37,13 @@ Page{
     SilicaFlickable {
         id: flickerList
         anchors.fill: parent
+
+        PullDownMenu {
+            MenuItem {
+                text: "Settings"
+                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"), {page: page, title: title})
+            }
+        }
 
         PageHeader {
             id: header

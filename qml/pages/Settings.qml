@@ -56,7 +56,7 @@ Page {
     SilicaFlickable {
         id: settingsFlickable
         anchors.fill: parent
-        contentHeight: header.height+explanation.height+listViewButtons.height+listViewSliders.height+buttonGo.height+Theme.paddingLarge
+        contentHeight: header.height+explanation.height+listViewButtons.height+listViewSliders.height+Theme.paddingLarge
         width: settingsPage.width
 
         VerticalScrollDecorator {}
@@ -146,15 +146,14 @@ Page {
         }
 
         //push page on stack and change to it
-        Button {
-            id: buttonGo
-            anchors.top: listViewSliders.bottom
-            anchors.topMargin: Theme.paddingLarge
-            anchors.horizontalCenter: parent.horizontalCenter
-            height: Theme.itemSizeMedium
-            text: "Go for it!"
-            onClicked: pageStack.push(Qt.resolvedUrl(attachedPage),{page:page,title:title})
-            //onClicked: pageStack.push(Qt.resolvedUrl(attachedPage), {page:page,value1:value1,value2:value2,value3:value3,value4:value4,value1Desc:value1Desc,value1Desc:value1Desc,value2Desc:value2Desc,value3Desc:value3Desc,value4Desc:value4Desc})
-        }
+//        Button {
+//            id: buttonGo
+//            anchors.top: listViewSliders.bottom
+//            anchors.topMargin: Theme.paddingLarge
+//            anchors.horizontalCenter: parent.horizontalCenter
+//            height: Theme.itemSizeMedium
+//            text: "Go for it!"
+//            onClicked: pageStack.push(Qt.resolvedUrl(attachedPage),{page:page,title:title})
+//        }
     }
 }

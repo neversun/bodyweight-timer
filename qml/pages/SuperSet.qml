@@ -10,20 +10,25 @@ Page{
     property variant    page
     property variant    title
 
-    //  get parameters from DB
-    property variant    value1ReturnFromDB:     DB.getDatabaseValuesFor(page,"value1")
-    property variant    value2ReturnFromDB:     DB.getDatabaseValuesFor(page,"value2")
-    property variant    value3ReturnFromDB:     DB.getDatabaseValuesFor(page,"value3")
-    property int        value1:                 value1ReturnFromDB[0]
-    property int        value2:                 value2ReturnFromDB[0]
-    property int        value3:                 value3ReturnFromDB[0]
+    // parameters from DB
+    property variant    value1ReturnFromDB
+    property variant    value2ReturnFromDB
+    property variant    value3ReturnFromDB
+    property int        value1
+    property int        value2
+    property int        value3
 
-    property variant    value1DescFromDB:       DB.getDatabaseValuesFor(page,"value1Desc")
-    property variant    value2DescFromDB:       DB.getDatabaseValuesFor(page,"value2Desc")
-    property variant    value3DescFromDB:       DB.getDatabaseValuesFor(page,"value3Desc")
-    property string     value1Desc:             value1DescFromDB[0]
-    property string     value2Desc:             value2DescFromDB[0]
-    property string     value3Desc:             value3DescFromDB[0]
+    onStatusChanged: {
+        if(status === PageStatus.Active)
+        {
+            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
+            value1 = value1ReturnFromDB[0];
+            value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2");
+            value2 = value2ReturnFromDB[0];
+            value3ReturnFromDB = DB.getDatabaseValuesFor(page,"value3");
+            value3 = value3ReturnFromDB[0];
+        }
+    }
 
     //  page internal properties
     //current time
@@ -46,6 +51,13 @@ Page{
     SilicaFlickable {
         id: flickerList
         anchors.fill: parent
+
+        PullDownMenu {
+            MenuItem {
+                text: "Settings"
+                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"), {page: page, title: title})
+            }
+        }
 
         PageHeader {
             id: header
