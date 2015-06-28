@@ -20,9 +20,9 @@ Page{
         if(status === PageStatus.Active)
         {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
-            value1 = value1ReturnFromDB[0];
+            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0];
             value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2");
-            value2 = value2ReturnFromDB[0];
+            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0];
         }
     }
 

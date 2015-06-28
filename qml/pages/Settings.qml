@@ -7,36 +7,95 @@ Page {
     property variant    page
     property variant    title
 
-    property variant    value1ReturnFromDB:     DB.getDatabaseValuesFor(page,"value1")
-    property variant    value2ReturnFromDB:     DB.getDatabaseValuesFor(page,"value2")
-    property variant    value3ReturnFromDB:     DB.getDatabaseValuesFor(page,"value3")
-    property variant    value4ReturnFromDB:     DB.getDatabaseValuesFor(page,"value4")
-    property variant    value1DescFromDB:       DB.getDatabaseValuesFor(page,"value1Desc")
-    property variant    value2DescFromDB:       DB.getDatabaseValuesFor(page,"value2Desc")
-    property variant    value3DescFromDB:       DB.getDatabaseValuesFor(page,"value3Desc")
-    property variant    value4DescFromDB:       DB.getDatabaseValuesFor(page,"value4Desc")
-    property string     value1Desc:             value1DescFromDB[0]
-    property string     value2Desc:             value2DescFromDB[0]
-    property string     value3Desc:             value3DescFromDB[0]
-    property string     value4Desc:             value4DescFromDB[0]
-    property int        value1:                 value1ReturnFromDB[0]
-    property int        value2:                 value2ReturnFromDB[0]
-    property int        value3:                 value3ReturnFromDB[0]
-    property int        value4:                 value4ReturnFromDB[0]
-    property bool       value1Display:          value1ReturnFromDB[1]
-    property bool       value2Display:          value2ReturnFromDB[1]
-    property bool       value3Display:          value3ReturnFromDB[1]
-    property bool       value4Display:          value4ReturnFromDB[1]
-    property bool       value1IsTime:           value1DescFromDB[2]
-    property bool       value2IsTime:           value2DescFromDB[2]
-    property bool       value3IsTime:           value3DescFromDB[2]
-    property bool       value4IsTime:           value4DescFromDB[2]
-    property string     explanation:            DB.getDatabaseValuesFor(page,"explanation")[0]
+    property variant    value1ReturnFromDB
+    property variant    value2ReturnFromDB
+    property variant    value3ReturnFromDB
+    property variant    value4ReturnFromDB
+    property variant    value1DescFromDB
+    property variant    value2DescFromDB
+    property variant    value3DescFromDB
+    property variant    value4DescFromDB
+    property string     value1Desc
+    property string     value2Desc
+    property string     value3Desc
+    property string     value4Desc
+    property int        value1
+    property int        value2
+    property int        value3
+    property int        value4
+    property bool       value2Display
+    property bool       value1Display
+    property bool       value3Display
+    property bool       value4Display
+    property bool       value1IsTime
+    property bool       value2IsTime
+    property bool       value3IsTime
+    property bool       value4IsTime
+    property string     explanation
 
     function capitaliseFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-    property string     attachedPage:       capitaliseFirstLetter(page)+".qml"
+
+    // TODO: refactor this block. doesnt look good to me
+    Component.onCompleted: {
+        settingsPage.value1ReturnFromDB =     DB.getDatabaseValuesFor(page,"value1")
+        settingsPage.value2ReturnFromDB =     DB.getDatabaseValuesFor(page,"value2")
+        settingsPage.value3ReturnFromDB =     DB.getDatabaseValuesFor(page,"value3")
+        settingsPage.value4ReturnFromDB =     DB.getDatabaseValuesFor(page,"value4")
+        settingsPage.value1DescFromDB =       DB.getDatabaseValuesFor(page,"value1Desc")
+        settingsPage.value2DescFromDB =       DB.getDatabaseValuesFor(page,"value2Desc")
+        settingsPage.value3DescFromDB =       DB.getDatabaseValuesFor(page,"value3Desc")
+        settingsPage.value4DescFromDB =       DB.getDatabaseValuesFor(page,"value4Desc")
+        settingsPage.explanation =            DB.getDatabaseValuesFor(page,"explanation")[0]
+
+        onValue1ReturnFromDbchanged: {
+            settingsPage.value1 =                 value1ReturnFromDB[0]
+            settingsPage.value1Display =          value1ReturnFromDB[1]
+        }
+
+        onValue2ReturnFromDbchanged: {
+            settingsPage.value2 =                 value2ReturnFromDB[0]
+            settingsPage.value2Display =          value2ReturnFromDB[1]
+        }
+
+        onValue3ReturnFromDbchanged: {
+            settingsPage.value3 =                 value3ReturnFromDB[0]
+            settingsPage.value3Display =          value3ReturnFromDB[1]
+        }
+
+        onValue4ReturnFromDbchanged: {
+            settingsPage.value4 =                 value4ReturnFromDB[0]
+            settingsPage.value4Display =          value4ReturnFromDB[1]
+        }
+
+        onValue1DescFromDBchanged: {
+            settingsPage.value1Desc =            value1DescFromDB[0]
+            settingsPage.value1IsTime =          value1DescFromDB[2]
+        }
+
+        onValue2DescFromDBchanged: {
+            settingsPage.value2Desc =            value2DescFromDB[0]
+            settingsPage.value2IsTime =          value2DescFromDB[2]
+        }
+
+        onValue3DescFromDBchanged: {
+            settingsPage.value3Desc =            value3DescFromDB[0]
+            settingsPage.value3IsTime =          value3DescFromDB[2]
+        }
+
+        onValue4DescFromDBchanged: {
+            settingsPage.value4Desc =            value4DescFromDB[0]
+            settingsPage.value4IsTime =          value4DescFromDB[2]
+        }
+
+        if (value1Display) {if(value1IsTime) {settingButtonModel.append({"value": value1, "valueDesc": value1Desc,"valueName":"value1"});} else {settingSliderModel.append({"value":value1, "valueDesc":value1Desc,"valueName":"value1"});}};
+        if (value2Display) {if(value2IsTime) {settingButtonModel.append({"value": value2, "valueDesc": value2Desc,"valueName":"value2"});} else {settingSliderModel.append({"value":value2, "valueDesc":value2Desc,"valueName":"value2"});}};
+        if (value3Display) {if(value3IsTime) {settingButtonModel.append({"value": value3, "valueDesc": value3Desc,"valueName":"value3"});} else {settingSliderModel.append({"value":value3, "valueDesc":value3Desc,"valueName":"value3"});}};
+        if (value4Display) {if(value4IsTime) {settingButtonModel.append({"value": value4, "valueDesc": value4Desc,"valueName":"value4"});} else {settingSliderModel.append({"value":value4, "valueDesc":value4Desc,"valueName":"value4"});}};
+    }
+
+
 
     ListModel {
         id: settingButtonModel
@@ -44,13 +103,6 @@ Page {
 
     ListModel {
         id: settingSliderModel
-    }
-
-    Component.onCompleted: {
-        if (value1Display) {if(value1IsTime) {settingButtonModel.append({"value": value1, "valueDesc": value1Desc,"valueName":"value1"});} else {settingSliderModel.append({"value":value1, "valueDesc":value1Desc,"valueName":"value1"});}};
-        if (value2Display) {if(value2IsTime) {settingButtonModel.append({"value": value2, "valueDesc": value2Desc,"valueName":"value2"});} else {settingSliderModel.append({"value":value2, "valueDesc":value2Desc,"valueName":"value2"});}};
-        if (value3Display) {if(value3IsTime) {settingButtonModel.append({"value": value3, "valueDesc": value3Desc,"valueName":"value3"});} else {settingSliderModel.append({"value":value3, "valueDesc":value3Desc,"valueName":"value3"});}};
-        if (value4Display) {if(value4IsTime) {settingButtonModel.append({"value": value4, "valueDesc": value4Desc,"valueName":"value4"});} else {settingSliderModel.append({"value":value4, "valueDesc":value4Desc,"valueName":"value4"});}};
     }
 
     SilicaFlickable {
@@ -144,16 +196,5 @@ Page {
                 onValueChanged: { DB.setDatabaseValuesFor(page,model.valueName,value);}
             }
         }
-
-        //push page on stack and change to it
-//        Button {
-//            id: buttonGo
-//            anchors.top: listViewSliders.bottom
-//            anchors.topMargin: Theme.paddingLarge
-//            anchors.horizontalCenter: parent.horizontalCenter
-//            height: Theme.itemSizeMedium
-//            text: "Go for it!"
-//            onClicked: pageStack.push(Qt.resolvedUrl(attachedPage),{page:page,title:title})
-//        }
     }
 }

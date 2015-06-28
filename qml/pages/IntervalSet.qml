@@ -22,11 +22,11 @@ Page{
         if(status === PageStatus.Active)
         {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
-            value1 = value1ReturnFromDB[0];
+            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0];
             value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2");
-            value2 = value2ReturnFromDB[0];
+            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0];
             value3ReturnFromDB = DB.getDatabaseValuesFor(page,"value3");
-            value3 = value3ReturnFromDB[0];
+            onValue3ReturnFromDBchanged: value3 = value3ReturnFromDB[0];
         }
     }
 
