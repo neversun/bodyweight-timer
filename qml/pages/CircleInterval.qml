@@ -18,10 +18,11 @@ Page{
     onStatusChanged: {
         if(status === PageStatus.Active)
         {
-            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
-            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0];
+            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
+            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
 
-            appWindow.exerciseActive = true;
+            appWindow.exerciseActive = true
+            appWindow.exerciseActiveName = title
         }
     }
 

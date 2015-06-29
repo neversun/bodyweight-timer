@@ -32,23 +32,49 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
-        id: label
-        anchors.centerIn: parent
-        text: "bodyweight\nTimer"
+    // TODO: Peeking shows, if changed, old status
+    onStatusChanged: {
+        if(status !== Cover.Inactive && appWindow.exerciseActive) {
+            coverAction.enabled = true
+            coverTitle.visible = true
+
+            placeholder.visible = false
+        }
+        if(!appWindow.exerciseActive) {
+            coverAction.enabled = false
+            coverTitle.visible = false
+
+            placeholder.visible = true
+        }
     }
 
-//    CoverActionList {
-//        id: coverAction
+    CoverPlaceholder {
+                id: placeholder
+                visible: true
+                Image {
+                    anchors.centerIn: parent
+                    source: "cover.png"
+                }
+            }
 
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-next"
-//        }
 
-//        CoverAction {
-//            iconSource: "image://theme/icon-cover-pause"
-//        }
-//    }
+    Label {
+        id: coverTitle
+        visible: false
+        anchors.centerIn: parent
+        color: Theme.primaryColor
+        text: appWindow.exerciseActiveName
+    }
+
+    CoverActionList {
+        id: coverAction
+        enabled: false
+
+        CoverAction {
+            iconSource: appWindow.timerRunning ? "image://theme/icon-cover-pause" : "image://theme/icon-cover-play"
+            onTriggered: appWindow.timerRunning = !appWindow.timerRunning
+        }
+    }
 }
 
 

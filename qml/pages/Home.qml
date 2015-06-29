@@ -6,7 +6,14 @@ Page {
     id: root
 
     Component.onCompleted: {
-        DB.initializeDatabase();
+        DB.initializeDatabase()
+    }
+
+    onStatusChanged: {
+        if(status === PageStatus.Active) {
+            appWindow.timerRunning = false
+            appWindow.exerciseActive = false
+        }
     }
 
     SilicaFlickable {

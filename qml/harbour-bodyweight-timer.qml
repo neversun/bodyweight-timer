@@ -40,6 +40,7 @@ ApplicationWindow
 
     property bool timerRunning: false
     property bool exerciseActive: false
+    property string exerciseActiveName
 }
 
 

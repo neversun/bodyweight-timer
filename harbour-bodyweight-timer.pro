@@ -35,7 +35,10 @@ OTHER_FILES += qml/harbour-bodyweight-timer.qml \
     qml/pages/Settings.qml \
     qml/pages/SuperSet.qml \
     qml/pages/Tabata.qml \
-    qml/pages/TimerPickerDialogMinutesSeconds.qml
+    qml/pages/TimerPickerDialogMinutesSeconds.qml \
+    qml/js/global_functions.js \
+    harbour-bodyweight-timer.png \
+    qml/cover/cover.png
 
 # to disable building translations every time, comment out the
 # following CONFIG line

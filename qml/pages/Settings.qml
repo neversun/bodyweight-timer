@@ -93,6 +93,10 @@ Page {
         if (value2Display) {if(value2IsTime) {settingButtonModel.append({"value": value2, "valueDesc": value2Desc,"valueName":"value2"});} else {settingSliderModel.append({"value":value2, "valueDesc":value2Desc,"valueName":"value2"});}};
         if (value3Display) {if(value3IsTime) {settingButtonModel.append({"value": value3, "valueDesc": value3Desc,"valueName":"value3"});} else {settingSliderModel.append({"value":value3, "valueDesc":value3Desc,"valueName":"value3"});}};
         if (value4Display) {if(value4IsTime) {settingButtonModel.append({"value": value4, "valueDesc": value4Desc,"valueName":"value4"});} else {settingSliderModel.append({"value":value4, "valueDesc":value4Desc,"valueName":"value4"});}};
+
+
+        appWindow.timerRunning = false
+        appWindow.exerciseActive = false
     }
 
 

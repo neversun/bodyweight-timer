@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtMultimedia 5.0
 import Sailfish.Silica 1.0
 import "../js/database.js" as DB
+import "../js/global_functions.js" as AppFunctions
 
 Page{
     id: exercisePage
@@ -21,12 +22,15 @@ Page{
     onStatusChanged: {
         if(status === PageStatus.Active)
         {
-            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
-            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0];
-            value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2");
-            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0];
-            value3ReturnFromDB = DB.getDatabaseValuesFor(page,"value3");
-            onValue3ReturnFromDBchanged: value3 = value3ReturnFromDB[0];
+            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
+            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
+            value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2")
+            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0]
+            value3ReturnFromDB = DB.getDatabaseValuesFor(page,"value3")
+            onValue3ReturnFromDBchanged: value3 = value3ReturnFromDB[0]
+
+            appWindow.exerciseActive = true
+            appWindow.exerciseActiveName = title
         }
     }
 
@@ -100,7 +104,7 @@ Page{
                 id: progressCircleTimer
                 interval: 1000
                 repeat: true
-                running: false
+                running: appWindow.timerRunning
                 onTriggered: {
                     //init
                     if(exercisePage.setDuration === exercisePage.setDurationPermanent) {
@@ -175,7 +179,7 @@ Page{
                     "Start"
                 }
             }
-            onClicked: progressCircleTimer.running = !progressCircleTimer.running
+            onClicked: AppFunctions.timerTogglePause()
         }
     }
 }
