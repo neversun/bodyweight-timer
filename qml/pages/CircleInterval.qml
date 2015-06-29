@@ -2,6 +2,7 @@ import QtQuick 2.0
 import QtMultimedia 5.0
 import Sailfish.Silica 1.0
 import "../js/database.js" as DB
+import "../js/global_functions.js" as AppFunctions
 
 Page{
     id: exercisePage
@@ -19,6 +20,8 @@ Page{
         {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1");
             onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0];
+
+            appWindow.exerciseActive = true;
         }
     }
 
@@ -32,7 +35,6 @@ Page{
     property int exerciseValue:1;
     //save for reset. dont change
     property int exerciseValuePermanent:1
-
 
     SilicaFlickable {
         id: flickerList
@@ -85,7 +87,7 @@ Page{
                 id: progressCircleTimer
                 interval: 1000
                 repeat: true
-                running: false
+                running: appWindow.timerRunning
                 onTriggered: {
                     //init
                     if(exercisePage.timerValue === exercisePage.timerValuePermanent) {
@@ -146,7 +148,7 @@ Page{
                     "Start"
                 }
             }
-            onClicked: progressCircleTimer.running = !progressCircleTimer.running
+            onClicked: AppFunctions.timerTogglePause()
         }
     }
 }

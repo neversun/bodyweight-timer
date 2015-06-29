@@ -34,8 +34,12 @@ import "pages"
 
 ApplicationWindow
 {
+    id: appWindow
     initialPage: Qt.resolvedUrl("pages/Home.qml")
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
+
+    property bool timerRunning: false
+    property bool exerciseActive: false
 }
 
 
