@@ -44,6 +44,14 @@ Page{
 
             Label {
                 wrapMode: TextEdit.WordWrap
+                text: "\nAwesome icon made by LinuCC"
+                width: parent.width
+                font.pixelSize: Theme.fontSizeExtraSmall
+                color: Theme.highlightColor
+            }
+
+            Label {
+                wrapMode: TextEdit.WordWrap
                 text: "\nThe sounds \"Boxing Bell\" (modifications: shortend length), made by Benboncan under CC BY 3.0 at: \nhttp://www.freesound.org/people/Benboncan/sounds/66951/ \nhttp://www.freesound.org/people/Benboncan/sounds/66952/ \n"
                 width: parent.width
                 font.pixelSize: Theme.fontSizeExtraSmall
