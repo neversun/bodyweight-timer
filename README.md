@@ -5,8 +5,8 @@ time supporting app for traing purposes (bodyweight-training) on Jolla Sailfish 
 ## Planned features
 * Enable/Disable Sounds
 * Configuration of bell types for different actions
-* naming of exercises
+* Naming of exercises
 * Translations
 * Additional training methods
-* active cover
+* Nicer active covers
 * Saveable presets for each training method
