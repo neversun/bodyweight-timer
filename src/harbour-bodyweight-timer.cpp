@@ -33,6 +33,7 @@
 #endif
 
 #include <sailfishapp.h>
+#include <src/applibrary.h>
 
 
 int main(int argc, char *argv[])
@@ -46,6 +47,14 @@ int main(int argc, char *argv[])
     //
     // To display the view, call "show()" (will show fullscreen on device).
 
-    return SailfishApp::main(argc, argv);
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView();
+
+    appLibrary* applib = new appLibrary();
+    view->rootContext()->setContextProperty("appLibrary", applib);
+    view->setSource(SailfishApp::pathTo("qml/harbour-bodyweight-timer.qml"));
+
+    view->showFullScreen();
+    app->exec();
 }
 

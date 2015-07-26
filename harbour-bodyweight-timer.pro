@@ -13,8 +13,12 @@
 TARGET = harbour-bodyweight-timer
 
 CONFIG += sailfishapp
+CONFIG += c++11
 
-SOURCES += src/harbour-bodyweight-timer.cpp
+QT += network dbus
+
+SOURCES += src/harbour-bodyweight-timer.cpp \
+    src/applibrary.cpp
 
 OTHER_FILES += qml/harbour-bodyweight-timer.qml \
     qml/cover/CoverPage.qml \
@@ -32,13 +36,14 @@ OTHER_FILES += qml/harbour-bodyweight-timer.qml \
     qml/pages/Home.qml \
     qml/pages/IntervalSet.qml \
     qml/pages/Ladder.qml \
-    qml/pages/Settings.qml \
     qml/pages/SuperSet.qml \
     qml/pages/Tabata.qml \
     qml/pages/TimerPickerDialogMinutesSeconds.qml \
     qml/js/global_functions.js \
     harbour-bodyweight-timer.png \
-    qml/cover/cover.png
+    qml/cover/cover.png \
+    qml/pages/ExerciseSettings.qml \
+    qml/pages/AppSettings.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -49,4 +54,7 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-bodyweight-timer-de.ts
+
+HEADERS += \
+    src/applibrary.h
 

@@ -42,8 +42,9 @@ function initializeDatabase() {
         try {
             db.transaction(
                 function(tx) {
-                tx.executeSql('CREATE TABLE IF NOT EXISTS meta (version TEXT)');
-                tx.executeSql('INSERT INTO meta (version) VALUES (?)',[dbVersion]);})
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS meta (version TEXT, blankingDisabled INTEGER)');
+                    tx.executeSql('INSERT INTO meta (version, blankingDisabled) VALUES (?,?)',[dbVersion,1]);
+                })
         } catch (err) { console.log("create and fill meta table: "+err); }
     }
 
@@ -197,4 +198,59 @@ function getDatabaseValuesFor(exercise,column) {
     returnValue.push(used);
     returnValue.push(timeValue)
     return returnValue;
+}
+
+/*  Returns a boolean value, if blanking is disabled
+*/
+function isBlankingDisabled() {
+    var result;
+    var returnValue;
+    var db = openDatabase();
+
+    try {
+    db.transaction( function(tx) {
+        result = tx.executeSql('SELECT blankingDisabled FROM meta;')
+                })
+    } catch (err) {
+        console.log("isBlankingDisabled" +err);
+    }
+    returnValue = result.rows.item(0)["blankingDisabled"]
+    console.log(returnValue);
+    if(returnValue === 0) {
+        returnValue = false;
+    }
+    if(returnValue === 1) {
+        returnValue = true;
+    }
+    return returnValue;
+}
+
+/*  Updates blanking value in meta-table
+*   @param {bool} boleanValue - boolean value if blanking should be disabled
+*/
+function setBlankingDisabled(boleanValue) {
+    var ErrorOccured=false;
+    var integerValue;
+
+    if(boleanValue === false) {
+        integerValue = 0;
+    }
+    if(boleanValue === true) {
+        integerValue = 1;
+    }
+
+    var db = openDatabase();
+    try {
+        db.transaction(
+                function(tx) {
+                    //TODO: Why cant I use positional parameter for column?
+                    tx.executeSql('UPDATE meta SET blankingDisabled =?;', [integerValue]);
+                }
+        )
+    } catch (err)
+    {
+        console.log("setBlankingDisabled:"+err);
+        ErrorOccured=true;
+    }
+    return ErrorOccured;
 }

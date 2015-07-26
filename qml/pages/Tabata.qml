@@ -35,6 +35,10 @@ Page{
 
             appWindow.exerciseActive = true
             appWindow.exerciseActiveName = title
+            AppFunctions.enableBlanking()
+        }
+        if (status === PageStatus.Deactivating) {
+            AppFunctions.disableBlanking()
         }
     }
 
@@ -81,7 +85,7 @@ Page{
         PullDownMenu {
             MenuItem {
                 text: "Settings"
-                onClicked: pageStack.push(Qt.resolvedUrl("Settings.qml"), {page: page, title: title})
+                onClicked: pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title})
             }
         }
 
