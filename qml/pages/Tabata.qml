@@ -42,41 +42,68 @@ Page{
         }
     }
 
-    //  page internal properties
-    //duration of active time
+    //##    page internal properties
+    // duration of active time
+    property int remainingActiveTime
     property int activeTimeDuration:value2
-    //save for reset. dont change
-    property int activeTimeDurationPermament:value2
+
+    onActiveTimeDurationChanged: resetRemainingActiveTime()
 
     //duration of pause
-    property int pauseDuration:value3
-    //save for reset. dont change
-    property int pauseDurationPermanent:value3
+    property int remainingPauseTime
+    property int pauseTimeDuration:value3
+
+    onPauseTimeDurationChanged: resetRemainingPauseTime()
 
     //rounds per exercise
     property int roundsPerExercise:value1
-    //save for reset. dont change
-    property int roundsPerExercisePermanent:value1
 
     //number of exercises
+    property int currentExercise
     property int numberOfExercises: value4
-    //save for reset. dont change
-    property int numberOfExercisesPermanent: value4
+
+    onNumberOfExercisesChanged: resetCurrentExercise()
 
     //sum of all active times + pauses
-    property int sumAllDurations: (activeTimeDurationPermament+pauseDurationPermanent)*roundsPerExercisePermanent
-    //save for reset. dont change
-    property int sumAllDurationsPermanent: (activeTimeDurationPermament+pauseDurationPermanent)*roundsPerExercisePermanent
+    property int remainingSumAllDurations
+    property int sumAllDurations: (activeTimeDuration+pauseTimeDuration)*roundsPerExercise
+
+    onSumAllDurationsChanged: resetRemainingSumAllDurations()
 
     //track the current mode (active or pause)
-    property int activeTimeRemaining: activeTimeDurationPermament
-    property int pauseTimeRemaining: pauseDurationPermanent
     property bool isActiveTime: true
 
-    //ProgressCircle
+    // color of ProgressCircle based current mode (active or pause time)
     property string progressCircleColor: "lime"
+    ////
 
-    //duration of an exercise: per every exercise (this are rounds too) -> roundsPerExercise * (activeTimeDuration+pauseDuration)
+    //##    page internal JS functions
+    function resetRemainingActiveTime() {
+        remainingActiveTime = activeTimeDuration;
+    }
+
+    function resetRemainingPauseTime() {
+        remainingPauseTime = pauseTimeDuration;
+    }
+
+    function resetCurrentExercise() {
+        currentExercise = 1
+    }
+
+    function resetRemainingSumAllDurations() {
+        remainingSumAllDurations = sumAllDurations
+    }
+
+    function resetTimerWithActivePauseExerciseSum() {
+        resetRemainingActiveTime();
+        resetRemainingPauseTime();
+        resetCurrentExercise();
+        resetRemainingSumAllDurations();
+        progressCircleTimer.restart();
+        progressCircleTimer.stop();
+    }
+    ////
+
 
     SilicaFlickable {
         id: flickerList
@@ -85,13 +112,11 @@ Page{
         PullDownMenu {
             MenuItem {
                 text: "Settings"
-                onClicked: pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title})
+                onClicked: {
+                    pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title});
+                    resetTimerWithActivePauseExerciseSum();
+                }
             }
-        }
-
-        PageHeader {
-            id: header
-            title: exercisePage.title
         }
 
         Audio {
@@ -103,6 +128,11 @@ Page{
             source: "sound/double_boxing-bell.wav"
         }
 
+        PageHeader {
+            id: header
+            title: exercisePage.title
+        }
+
         Label {
             id: timerAsNumber
             color: Theme.highlightColor
@@ -111,8 +141,8 @@ Page{
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
             text: {
-                var displayMinutes = Math.floor(sumAllDurations/60);
-                var displaySeconds = sumAllDurations-(displayMinutes*60)
+                var displayMinutes = Math.floor(remainingSumAllDurations/60);
+                var displaySeconds = remainingSumAllDurations-(displayMinutes*60)
                 displayMinutes+"m "+displaySeconds+"s"
             }
             font.pixelSize: Theme.fontSizeHuge
@@ -120,7 +150,7 @@ Page{
 
         ProgressCircle {
             id: progressCircle
-            scale: 4
+            scale: 4.5
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
@@ -131,104 +161,105 @@ Page{
                 interval: 1000
                 repeat: true
                 running: appWindow.timerRunning
+                triggeredOnStart: true
                 onTriggered: {
                     //init
-                    if(exercisePage.sumAllDurations === exercisePage.sumAllDurationsPermanent) {
-                        var secondsOfCurrentTime = (exercisePage.sumAllDurationsPermanent % 60)
+                    if(exercisePage.remainingSumAllDurations === exercisePage.sumAllDurations) {
+                        var secondsOfCurrentTime = (exercisePage.sumAllDurations % 60)
                         progressCircle.value = (100-(0.0166666666766666667 * secondsOfCurrentTime))
                     }
                     //calc the current time
                     progressCircle.value = (progressCircle.value + 0.0166666666766666667) % 1.0
-                    exercisePage.sumAllDurations = exercisePage.sumAllDurations-1
+                    exercisePage.remainingSumAllDurations -= 1
 
                     //no more remaining time in this exercise?
-                    if(exercisePage.sumAllDurations === 0)
+                    if(exercisePage.remainingSumAllDurations === 0)
                     {
                         //no more remaining exercises?
-                        if(numberOfExercises === 1)
+                        if(currentExercise > numberOfExercises)
                         {
                             //Improvement: TripleBell?
-                            singleBell.play()
-                            doubleBell.play()
-                            exercisePage.sumAllDurations = exercisePage.sumAllDurationsPermanent
-                            exercisePage.numberOfExercises = exercisePage.numberOfExercisesPermanent
-                            progressCircleTimer.restart()
-                            progressCircleTimer.stop()
-                    } else {
-                            //reset timer and remove 1 of a exercise
-                            exercisePage.numberOfExercises = exercisePage.numberOfExercises-1
-                            if(numberOfExercises !== 0)
+                            singleBell.play();
+                            doubleBell.play();
+                            resetTimerWithActivePauseExerciseSum();
+                        } else {
+                            //reset timer and add 1 to current exercise
+                            exercisePage.currentExercise += 1
+                            if(currentExercise !== numberOfExercises)
                             {
                                 singleBell.play()
                             }
                             progressCircleTimer.stop()
-                            exercisePage.sumAllDurations = exercisePage.sumAllDurationsPermanent
+                            resetRemainingSumAllDurations();
                             progressCircleTimer.restart()
                         }
                     } else {
                         //count remaining time
                         if(isActiveTime)
                         {
-                            console.log(activeTimeRemaining)
-                            activeTimeRemaining = activeTimeRemaining-1
-                            console.log(activeTimeRemaining)
+                            console.log(remainingActiveTime)
+                            remainingActiveTime -= 1
+                            console.log(remainingActiveTime)
                         } else {
-                            console.log(pauseTimeRemaining)
-                            pauseTimeRemaining = pauseTimeRemaining-1
-                            console.log(pauseTimeRemaining)
-
+                            console.log(remainingPauseTime)
+                            remainingPauseTime -= 1
+                            console.log(remainingPauseTime)
                         }
 
-
-                        if(activeTimeRemaining === 0) //Enter pause-mode
+                        if(remainingActiveTime === 0) //Enter pause-mode
                         {
-                            doubleBell.play()
-                            isActiveTime = false
-                            progressCircleColor = "red"
-                            activeTimeRemaining = activeTimeDurationPermament
+                            doubleBell.play();
+                            isActiveTime = false;
+                            progressCircleColor = "red";
+                            resetRemainingActiveTime();
                         }
-                        if(pauseTimeRemaining === 0) //Enter active-mode
+                        if(remainingPauseTime === 0) //Enter active-mode
                         {
-                            singleBell.play()
-                            isActiveTime = true
-                            progressCircleColor = "lime"
-                            pauseTimeRemaining = pauseDurationPermanent
+                            singleBell.play();
+                            isActiveTime = true;
+                            progressCircleColor = "lime";
+                            resetRemainingPauseTime();
                         }
                     }
                 }
-                triggeredOnStart: true
             }
         }
 
         Label {
-            id:currentRoundDisplay
+            id:currentExerciseDisplay
             color: Theme.highlightColor
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
-            text: {
-                var currentRoundFromLowToHigh = (numberOfExercisesPermanent-numberOfExercises+1)
-                if(currentRoundFromLowToHigh <= numberOfExercisesPermanent && progressCircleTimer.running) {
-                    "current excerise: " + currentRoundFromLowToHigh
-                }
-                else { "Go for it!" }
-            }
             font.pixelSize: Theme.fontSizeMedium
+            text: {
+                if(progressCircleTimer.running) {
+                    "current excerise: " + currentExercise + " of " + roundsPerExercise
+                }
+                else { "Number of exercises: " + roundsPerExercise}
+            }
         }
 
 
+
         Button {
-            anchors.top: currentRoundDisplay.bottom
+            anchors.top: currentExerciseDisplay.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.topMargin: Theme.paddingLarge
+            onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
                     "Pause"
-                } else {
-                    "Start"
+                }
+                else {
+                    if(appWindow.timerStartedOnce) {
+                        "Resume"
+                    }
+                    else {
+                        "Start"
+                    }
                 }
             }
-            onClicked: AppFunctions.timerTogglePause()
         }
     }
 }
