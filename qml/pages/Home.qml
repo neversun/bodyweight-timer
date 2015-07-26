@@ -13,6 +13,7 @@ Page {
         if(status === PageStatus.Active) {
             appWindow.timerRunning = false
             appWindow.exerciseActive = false
+            appWindow.timerStartedOnce = false
         }
     }
 

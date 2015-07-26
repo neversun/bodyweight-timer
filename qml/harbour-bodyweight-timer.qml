@@ -39,6 +39,7 @@ ApplicationWindow
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
     property bool timerRunning: false
+    property bool timerStartedOnce: false
     property bool exerciseActive: false
     property string exerciseActiveName
 }

@@ -97,6 +97,7 @@ Page {
 
         appWindow.timerRunning = false
         appWindow.exerciseActive = false
+        appWindow.timerStartedOnce = false
     }
 
 
