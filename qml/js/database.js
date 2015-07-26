@@ -134,9 +134,6 @@ function defaultDatabaseValuesFor(exercise) {
 */
 function setDatabaseValuesFor(exercise,column,value) {
     var ErrorOccured=false;
-    console.log(exercise)
-    console.log(column)
-    console.log(value)
 
     var db = openDatabase();
     try {
@@ -215,7 +212,6 @@ function isBlankingDisabled() {
         console.log("isBlankingDisabled" +err);
     }
     returnValue = result.rows.item(0)["blankingDisabled"]
-    console.log(returnValue);
     if(returnValue === 0) {
         returnValue = false;
     }

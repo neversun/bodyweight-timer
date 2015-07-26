@@ -10,7 +10,6 @@ function enableBlanking() {
 }
 
 function disableBlanking() {
-    console.log("disableBlanking");
     appLibrary.setBlankingMode(false);
 }
 
