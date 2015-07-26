@@ -21,7 +21,7 @@ Page{
 
     // initialize page properties once page is fully loaded
     onStatusChanged: {
-        if(status === PageStatus.Active) {
+        if(status === PageStatus.Activating) {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
             onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
             value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2")

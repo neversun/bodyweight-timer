@@ -18,7 +18,7 @@ Page{
     property int        value2
 
     onStatusChanged: {
-        if(status === PageStatus.Active)
+        if(status === PageStatus.Activating)
         {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
             onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
@@ -135,9 +135,8 @@ Page{
             id:currentRoundDisplay
             color: Theme.highlightColor
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.top: progressCircle.bottom
-            //Todo: better margin to ProgressCircle
-            anchors.topMargin: progressCircle.height*3
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
             font.pixelSize: Theme.fontSizeMedium
             text: {
                 if(progressCircleTimer.running) {

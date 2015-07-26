@@ -17,7 +17,7 @@ Page{
 
     // initialize page properties once page is fully loaded
     onStatusChanged: {
-        if(status === PageStatus.Active)
+        if(status === PageStatus.Activating)
         {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
             onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
@@ -132,8 +132,8 @@ Page{
         Button {
             anchors.top: progressCircle.bottom
             anchors.horizontalCenter: parent.horizontalCenter
-            //Todo: better margin to ProgressCircle
-            anchors.topMargin: progressCircle.height*3
+            anchors.verticalCenter: parent.verticalCenter
+            anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {

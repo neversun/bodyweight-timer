@@ -22,7 +22,7 @@ Page{
     property int        value4
 
     onStatusChanged: {
-        if(status === PageStatus.Active)
+        if(status === PageStatus.Activating)
         {
             value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
             onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]

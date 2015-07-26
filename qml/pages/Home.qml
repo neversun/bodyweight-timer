@@ -10,7 +10,7 @@ Page {
     }
 
     onStatusChanged: {
-        if(status === PageStatus.Active) {
+        if(status === PageStatus.Activating) {
             appWindow.timerRunning = false
             appWindow.exerciseActive = false
             appWindow.timerStartedOnce = false
