@@ -132,7 +132,7 @@ Page{
                         if(currentRound === roundsPerExercise) {
                             singleBell.play();
                             doubleBell.play(); //IMPROVEMENT: Tripple Bell?
-                            AppFunctions.resetTimer();
+                            AppFunctions.resetTimerWithTimeSetRound();
                         } else {
                             doubleBell.play();
                             AppFunctions.restartTimerAndSet();
@@ -144,7 +144,7 @@ Page{
                             if(currentSet !== setsPerExercise) {
                                 singleBell.play();
                             }
-                            AppFunctions.resetTimer();
+                            AppFunctions.resetTimerWithTimeSetRound();
                         }
                     }
                 }
