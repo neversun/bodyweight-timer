@@ -38,23 +38,26 @@ Page{
         }
     }
 
-    //  page internal properties
-    //current time
-    property int setDuration:value1;
+    //##    page internal properties
+    // current time
+    property int currentTime
+    property int timePerSet:value1
 
-    //save for reset. dont change
-    property int setDurationPermanent:value1;
+    onTimePerSetChanged: AppFunctions.resetCurrentTime()
 
-    //rounds per exercise
-    property int setPerExercise: value2
-    //save for reset. dont change
-    property int setPerExercisePermanent:value2
+    // current set of an exercise
+    property int currentSet
+    property int setsPerExercise:value2
 
-    //current round from high to low
-    property int exerciseValue:value3;
+    onSetsPerExerciseChanged: AppFunctions.resetCurrentSet()
 
-    //save for reset. dont change
-    property int exerciseValuePermanent:value3;
+
+    // current round from high to low
+    property int currentRound
+    property int roundsPerExercise:value3
+
+    onRoundsPerExerciseChanged: AppFunctions.resetCurrentRound()
+    ////
 
     SilicaFlickable {
         id: flickerList
@@ -88,17 +91,17 @@ Page{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
+            font.pixelSize: Theme.fontSizeHuge
             text: {
-                var displayMinutes = Math.floor(setDuration/60);
-                var displaySeconds = setDuration-(displayMinutes*60)
+                var displayMinutes = Math.floor(currentTime/60);
+                var displaySeconds = currentTime-(displayMinutes*60)
                 displayMinutes+"m "+displaySeconds+"s"
             }
-            font.pixelSize: Theme.fontSizeHuge
         }
 
         ProgressCircle {
             id: progressCircle
-            scale: 4
+            scale: 4.5
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
@@ -109,48 +112,39 @@ Page{
                 interval: 1000
                 repeat: true
                 running: appWindow.timerRunning
+                triggeredOnStart: true
                 onTriggered: {
                     //init
-                    if(exercisePage.setDuration === exercisePage.setDurationPermanent) {
-                        var secondsOfCurrentTime = (exercisePage.setDurationPermanent % 60)
-                        progressCircle.value = (100-(0.01666666667 * secondsOfCurrentTime))
+                    if(exercisePage.currentTime === exercisePage.timePerSet) {
+                        var secondsOfCurrentTime = (exercisePage.timePerSet % 60);
+                        progressCircle.value = (100-(0.01666666667 * secondsOfCurrentTime));
                     }
                     //calc the current time
-                    progressCircle.value = (progressCircle.value + 0.01666666667) % 1.0
-                    exercisePage.setDuration = exercisePage.setDuration-1
+                    progressCircle.value = (progressCircle.value + 0.01666666667) % 1.0;
+                    exercisePage.currentTime -= 1;
 
                     //no more remaining sets for this exercise?
-                    if(setPerExercise == 0) {
-                        exerciseValue = exerciseValue - 1
-                        if(exerciseValue == 0)
-                        {
-                            singleBell.play()
-                            doubleBell.play() //IMPROVEMENT: Tripple Bell?
-                            exercisePage.setDuration = exercisePage.setDurationPermanent
-                            exercisePage.setPerExercise = exercisePage.setPerExercisePermanent
-                            exercisePage.exerciseValue = exercisePage.exerciseValuePermanent
-                            progressCircleTimer.restart()
-                            progressCircleTimer.stop()
+                    if(currentSet > setsPerExercise) {
+                        currentRound += 1;
+                        if(currentRound === roundsPerExercise) {
+                            singleBell.play();
+                            doubleBell.play(); //IMPROVEMENT: Tripple Bell?
+                            AppFunctions.resetTimerWithTimeSetRound();
                         } else {
-                            doubleBell.play()
-                            exercisePage.setDuration = exercisePage.setDurationPermanent
-                            exercisePage.setPerExercise = exercisePage.setPerExercisePermanent
-                            progressCircleTimer.restart()
+                            doubleBell.play();
+                            AppFunctions.restartTimerAndSet();
                         }
                     } else {
                         //reset timer and remove 1 of a set
-                        if(exercisePage.setDuration === 0) {
-                            exercisePage.setPerExercise = exercisePage.setPerExercise - 1
-                            if(setPerExercise !== 0) {
-                                singleBell.play()
+                        if(exercisePage.currentTime === 0) {
+                            exercisePage.currentSet += 1;
+                            if(currentSet !== setsPerExercise) {
+                                singleBell.play();
                             }
-                            progressCircleTimer.stop()
-                            exercisePage.setDuration = exercisePage.setDurationPermanent
-                            progressCircleTimer.restart()
+                            AppFunctions.resetTimerWithTimeSetRound();
                         }
                     }
                 }
-                triggeredOnStart: true
             }
         }
 
@@ -160,30 +154,54 @@ Page{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
-            text: {
-                var currentRoundFromLowToHigh = (exerciseValuePermanent-exerciseValue+1)
-                if(currentRoundFromLowToHigh <= exerciseValuePermanent && progressCircleTimer.running) {
-                    "current set: " + (setPerExercisePermanent-setPerExercise+1) + " of " + setPerExercisePermanent + "\n" +
-                    "current excerise: " + currentRoundFromLowToHigh + " of " + exerciseValuePermanent
-                }
-                else { "Go for it!" }
-            }
             font.pixelSize: Theme.fontSizeMedium
+            text: {
+                if(progressCircleTimer.running) {
+                    if(currentSet <= setsPerExercise) {
+                        "current set: " + currentSet + " of " + setsPerExercise
+                    }
+                    else {
+                        "current set: " + setsPerExercise + " of " + setsPerExercise
+                    }
+                }
+                else {
+                    "Sets for each exercise: " + setsPerExercise
+                }
+            }
+        }
+        Label {
+            id:currentExerciseDisplay
+            color: Theme.highlightColor
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.top: currentRoundDisplay.bottom
+            font.pixelSize: Theme.fontSizeMedium
+            text: {
+                if(progressCircleTimer.running) {
+                    "current excerise: " + currentRound + " of " + roundsPerExercise
+                }
+                else { "Number of exercises: " + roundsPerExercise}
+            }
         }
 
 
         Button {
-            anchors.top: currentRoundDisplay.bottom
+            anchors.top: currentExerciseDisplay.bottom
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.topMargin: Theme.paddingLarge
+            onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
                     "Pause"
-                } else {
-                    "Start"
+                }
+                else {
+                    if(appWindow.timerStartedOnce) {
+                        "Resume"
+                    }
+                    else {
+                        "Start"
+                    }
                 }
             }
-            onClicked: AppFunctions.timerTogglePause()
         }
     }
 }
