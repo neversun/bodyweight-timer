@@ -26,11 +26,20 @@ function resetCurrentTime() {
     currentTime = timePerSet;
 }
 
-function resetTimerWithTimeSet() {
+function resetTimerWithTime(){
     resetCurrentTime();
-    resetCurrentSet();
     progressCircleTimer.restart();
     progressCircleTimer.stop();
+}
+
+function resetTimerWithTimeSet() {
+    resetTimerWithTime();
+    resetCurrentSet();
+}
+
+function resetTimerWithTimeRound(){
+    resetTimerWithTime();
+    resetCurrentRound();
 }
 
 function resetTimerWithTimeSetRound() {
