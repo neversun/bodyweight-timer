@@ -68,7 +68,7 @@ Page{
                 text: "Settings"
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title});
-                    resetTimer();
+                    AppFunctions.resetTimer();
                 }
             }
         }
