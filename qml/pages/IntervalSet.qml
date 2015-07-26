@@ -43,54 +43,20 @@ Page{
     property int currentTime
     property int timePerSet:value1
 
-    onTimePerSetChanged: resetCurrentTime()
+    onTimePerSetChanged: AppFunctions.resetCurrentTime()
 
     // current set of an exercise
     property int currentSet
     property int setsPerExercise:value2
 
-    onSetsPerExerciseChanged: resetCurrentSet()
+    onSetsPerExerciseChanged: AppFunctions.resetCurrentSet()
 
 
     // current round from high to low
     property int currentRound
     property int roundsPerExercise:value3
 
-    onRoundsPerExerciseChanged: resetCurrentRound()
-    ////
-
-    //##    JS functions
-    function resetCurrentSet() {
-        currentSet = 1;
-    }
-
-    function resetCurrentRound() {
-        currentRound = 1;
-    }
-
-    function resetCurrentTime() {
-        currentTime = timePerSet;
-    }
-
-    function resetTimer() {
-        resetCurrentTime();
-        resetCurrentSet();
-        resetCurrentRound();
-        progressCircleTimer.restart();
-        progressCircleTimer.stop();
-    }
-
-    function restartTimerAndSet() {
-        resetCurrentTime();
-        resetCurrentSet();
-        progressCircleTimer.restart()
-    }
-
-    function restartTimer() {
-        progressCircleTimer.stop()
-        resetCurrentTime();
-        progressCircleTimer.restart()
-    }
+    onRoundsPerExerciseChanged: AppFunctions.resetCurrentRound()
     ////
 
     SilicaFlickable {
@@ -166,10 +132,10 @@ Page{
                         if(currentRound === roundsPerExercise) {
                             singleBell.play();
                             doubleBell.play(); //IMPROVEMENT: Tripple Bell?
-                            resetTimer();
+                            AppFunctions.resetTimer();
                         } else {
                             doubleBell.play();
-                            restartTimerAndSet();
+                            AppFunctions.restartTimerAndSet();
                         }
                     } else {
                         //reset timer and remove 1 of a set
@@ -178,7 +144,7 @@ Page{
                             if(currentSet !== setsPerExercise) {
                                 singleBell.play();
                             }
-                            resetTimer();
+                            AppFunctions.resetTimer();
                         }
                     }
                 }
