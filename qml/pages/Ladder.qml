@@ -75,6 +75,10 @@ Page{
             id: doubleBell
             source: "sound/double_boxing-bell.wav"
         }
+        Audio {
+            id: trippleBell
+            source: "sound/tripple_boxing-bell.wav"
+        }
 
         Label {
             id: timerAsNumber
@@ -115,7 +119,7 @@ Page{
 
                     //no more remaining sets for this exercise?
                     if(currentRound === roundsPerExercise) {
-                        doubleBell.play();
+                        trippleBell.play();
                         AppFunctions.resetTimerWithTimeRound();
                     } else {
                         //reset timer and remove 1 of a set

@@ -83,6 +83,10 @@ Page{
             id: doubleBell
             source: "sound/double_boxing-bell.wav"
         }
+        Audio {
+            id: trippleBell
+            source: "sound/tripple_boxing-bell.wav"
+        }
 
         Label {
             id: timerAsNumber
@@ -128,10 +132,10 @@ Page{
                         currentRound += 1;
                         if(currentRound === roundsPerExercise) {
                             singleBell.play();
-                            doubleBell.play(); //IMPROVEMENT: Tripple Bell?
+                            trippleBell.play(); //IMPROVEMENT: Tripple Bell?
                             AppFunctions.resetTimerWithTimeSetRound();
                         } else {
-                            doubleBell.play();
+                            trippleBell.play();
                             AppFunctions.restartTimerAndSet();
                         }
                     } else {

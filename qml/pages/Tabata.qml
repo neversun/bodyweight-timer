@@ -127,6 +127,10 @@ Page{
             id: doubleBell
             source: "sound/double_boxing-bell.wav"
         }
+        Audio {
+            id: trippleBell
+            source: "sound/tripple_boxing-bell.wav"
+        }
 
         PageHeader {
             id: header
@@ -179,15 +183,17 @@ Page{
                         if(currentExercise > numberOfExercises)
                         {
                             //Improvement: TripleBell?
+                            console.log();
                             singleBell.play();
-                            doubleBell.play();
+                            trippleBell.play();
                             resetTimerWithActivePauseExerciseSum();
                         } else {
                             //reset timer and add 1 to current exercise
                             exercisePage.currentExercise += 1
                             if(currentExercise !== numberOfExercises)
                             {
-                                singleBell.play()
+                                console.log();
+                                trippleBell.play();
                             }
                             progressCircleTimer.stop()
                             resetRemainingSumAllDurations();
@@ -208,7 +214,8 @@ Page{
 
                         if(remainingActiveTime === 0) //Enter pause-mode
                         {
-                            doubleBell.play();
+                            console.log();
+                            singleBell.play();
                             isActiveTime = false;
                             progressCircleColor = "red";
                             resetRemainingActiveTime();

@@ -72,6 +72,10 @@ Page{
             id: doubleBell
             source: "sound/double_boxing-bell.wav"
         }
+        Audio {
+            id: trippleBell
+            source: "sound/tripple_boxing-bell.wav"
+        }
 
 
         Label {
@@ -113,7 +117,7 @@ Page{
 
                     //no more remaining sets for this exercise?
                     if(currentSet > setsPerExercise) {
-                        doubleBell.play();
+                        trippleBell.play();
                         AppFunctions.restartTimerAndSet();
                     } else {
                         //reset timer and remove 1 of a set
