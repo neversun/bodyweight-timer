@@ -29,7 +29,7 @@ OTHER_FILES += qml/harbour-bodyweight-timer.qml \
     harbour-bodyweight-timer.desktop \
     qml/components/TimePickerMinutesSeconds.qml \
     qml/js/database.js \
-    qml/pages/sound/double_boxing-bell.wav \
+    qml/pages/sound/tripple_boxing-bell.wav \
     qml/pages/sound/single_boxing-bell.wav \
     qml/pages/About.qml \
     qml/pages/CircleInterval.qml \
@@ -43,7 +43,8 @@ OTHER_FILES += qml/harbour-bodyweight-timer.qml \
     harbour-bodyweight-timer.png \
     qml/cover/cover.png \
     qml/pages/ExerciseSettings.qml \
-    qml/pages/AppSettings.qml
+    qml/pages/AppSettings.qml \
+    qml/pages/sound/double_boxing-bell.wav
 
 # to disable building translations every time, comment out the
 # following CONFIG line
