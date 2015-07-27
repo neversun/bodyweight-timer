@@ -182,9 +182,6 @@ Page{
                         //no more remaining exercises?
                         if(currentExercise > numberOfExercises)
                         {
-                            //Improvement: TripleBell?
-                            console.log();
-                            singleBell.play();
                             trippleBell.play();
                             resetTimerWithActivePauseExerciseSum();
                         } else {
@@ -192,7 +189,6 @@ Page{
                             exercisePage.currentExercise += 1
                             if(currentExercise !== numberOfExercises)
                             {
-                                console.log();
                                 trippleBell.play();
                             }
                             progressCircleTimer.stop()
@@ -203,19 +199,14 @@ Page{
                         //count remaining time
                         if(isActiveTime)
                         {
-                            console.log(remainingActiveTime)
                             remainingActiveTime -= 1
-                            console.log(remainingActiveTime)
                         } else {
-                            console.log(remainingPauseTime)
                             remainingPauseTime -= 1
-                            console.log(remainingPauseTime)
                         }
 
                         if(remainingActiveTime === 0) //Enter pause-mode
                         {
-                            console.log();
-                            singleBell.play();
+                            doubleBell.play();
                             isActiveTime = false;
                             progressCircleColor = "red";
                             resetRemainingActiveTime();
