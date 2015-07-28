@@ -143,7 +143,7 @@ Page{
             anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
             font.pixelSize: Theme.fontSizeMedium
             text: {
-                if(progressCircleTimer.running) {
+                if(progressCircleTimer.running || appWindow.timerStartedOnce) {
                     if(currentRound <= roundsPerExercise) {
                         "current excerise: " + currentRound + " of " + roundsPerExercise
                     }
