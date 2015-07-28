@@ -109,6 +109,8 @@ Page{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
+            progressColor: Theme.highlightColor
+            backgroundColor: Theme.highlightDimmerColor
             Timer {
                 id: progressCircleTimer
                 interval: 1000
@@ -129,11 +131,12 @@ Page{
                     if(currentSet > setsPerExercise) {
                         currentRound += 1;
                         if(currentRound > roundsPerExercise) {
-                            trippleBell.play(); //IMPROVEMENT: Tripple Bell?
+                            trippleBell.play();
                             AppFunctions.resetTimerWithTimeSetRound();
                         } else {
                             doubleBell.play();
                             AppFunctions.restartTimerAndSet();
+                            AppFunctions.timerTogglePause();
                         }
                     } else {
                         //reset timer and remove 1 of a set

@@ -99,6 +99,8 @@ Page{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
+            progressColor: Theme.highlightColor
+            backgroundColor: Theme.highlightDimmerColor
             Timer {
                 id: progressCircleTimer
                 interval: 1000
@@ -116,18 +118,9 @@ Page{
                     exercisePage.currentTime -= 1;
 
                     //no more remaining sets for this exercise?
-                    if(currentSet > setsPerExercise) {
+                    if(exercisePage.currentTime === 0) {
                         trippleBell.play();
-                        AppFunctions.restartTimerAndSet();
-                    } else {
-                        //reset timer and remove 1 of a set
-                        if(exercisePage.currentTime === 0) {
-                            exercisePage.currentSet += 1;;
-                            if(currentSet !== setsPerExercise) {
-                                singleBell.play();
-                            }
-                            AppFunctions.resetTimerWithTimeSet();
-                        }
+                        AppFunctions.resetTimerWithTimeSet();
                     }
                 }
             }

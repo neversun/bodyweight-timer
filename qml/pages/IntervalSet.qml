@@ -134,11 +134,12 @@ Page{
                     if(currentSet > setsPerExercise) {
                         currentRound += 1;
                         if(currentRound > roundsPerExercise) {
-                            trippleBell.play(); //IMPROVEMENT: Tripple Bell?
+                            trippleBell.play();
                             AppFunctions.resetTimerWithTimeSetRound();
                         } else {
                             doubleBell.play();
                             AppFunctions.restartTimerAndSet();
+                            AppFunctions.timerTogglePause();
                         }
                     } else {
                         //reset timer and remove 1 of a set
