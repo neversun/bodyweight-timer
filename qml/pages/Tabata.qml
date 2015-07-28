@@ -180,20 +180,21 @@ Page{
                     if(exercisePage.remainingSumAllDurations === 0)
                     {
                         //no more remaining exercises?
-                        if(currentExercise > numberOfExercises)
+                        if(currentExercise >= numberOfExercises)
                         {
                             trippleBell.play();
                             resetTimerWithActivePauseExerciseSum();
                         } else {
                             //reset timer and add 1 to current exercise
                             exercisePage.currentExercise += 1
-                            if(currentExercise !== numberOfExercises)
+                            if(currentExercise <= numberOfExercises)
                             {
                                 trippleBell.play();
                             }
                             progressCircleTimer.stop()
                             resetRemainingSumAllDurations();
                             progressCircleTimer.restart()
+                            AppFunctions.timerTogglePause()
                         }
                     } else {
                         //count remaining time
@@ -231,10 +232,10 @@ Page{
             anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
             font.pixelSize: Theme.fontSizeMedium
             text: {
-                if(progressCircleTimer.running) {
-                    "current excerise: " + currentExercise + " of " + roundsPerExercise
+                if(progressCircleTimer.running || appWindow.timerStartedOnce) {
+                    "current excerise: " + currentExercise + " of " + numberOfExercises
                 }
-                else { "Number of exercises: " + roundsPerExercise}
+                else { "Number of exercises: " + numberOfExercises}
             }
         }
 
