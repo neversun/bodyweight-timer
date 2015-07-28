@@ -1,6 +1,9 @@
 .import "database.js" as DB
 
 function timerTogglePause() {
+    console.log("---------");
+    console.log("timerStartedOnce"+timerStartedOnce);
+    console.log("timerRunning"+timerRunning);
     appWindow.timerStartedOnce = true;
     if(appWindow.timerRunning === true) {
         appWindow.timerRunning = false;
@@ -10,6 +13,8 @@ function timerTogglePause() {
             appWindow.timerRunning = true;
         }
     }
+    console.log("timerStartedOnce"+timerStartedOnce);
+    console.log("timerRunning"+timerRunning);
 //    appWindow.timerRunning = !appWindow.timerRunning;
 }
 
@@ -38,24 +43,28 @@ function resetTimerWithTime(){
     progressCircleTimer.restart();
     progressCircleTimer.stop();
     appWindow.timerStartedOnce = false;
+    appWindow.timerRunning = false;
 }
 
 function resetTimerWithTimeSet() {
     resetTimerWithTime();
     resetCurrentSet();
     appWindow.timerStartedOnce = false;
+    appWindow.timerRunning = false;
 }
 
 function resetTimerWithTimeRound(){
     resetTimerWithTime();
     resetCurrentRound();
     appWindow.timerStartedOnce = false;
+    appWindow.timerRunning = false;
 }
 
 function resetTimerWithTimeSetRound() {
     resetTimerWithTimeSet();
     resetCurrentRound();
     appWindow.timerStartedOnce = false;
+    appWindow.timerRunning = false;
 }
 
 function restartTimerAndSet() {
