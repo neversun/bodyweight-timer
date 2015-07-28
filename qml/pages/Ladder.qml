@@ -118,17 +118,17 @@ Page{
                     exercisePage.currentTime -= 1;
 
                     //no more remaining sets for this exercise?
-                    if(currentRound === roundsPerExercise) {
+                    if(currentRound > roundsPerExercise) {
                         trippleBell.play();
-                        AppFunctions.resetTimerWithTimeRound();
+                        AppFunctions.resetTimerWithTime();
                     } else {
                         //reset timer and remove 1 of a set
                         if(exercisePage.currentTime === 0) {
                             exercisePage.currentRound += 1;
-                            if(currentRound !== roundsPerExercise) {
+                            if(currentRound <= roundsPerExercise) {
                                 singleBell.play();
                             }
-                            AppFunctions.resetTimerWithTimeRound();
+                            AppFunctions.restartTimer();
                         }
                     }
                 }
@@ -144,9 +144,16 @@ Page{
             font.pixelSize: Theme.fontSizeMedium
             text: {
                 if(progressCircleTimer.running) {
-                    "current excerise: " + currentRound + " of " + roundsPerExercise
+                    if(currentRound <= roundsPerExercise) {
+                        "current excerise: " + currentRound + " of " + roundsPerExercise
+                    }
+                    else {
+                        "current excerise: " + roundsPerExercise + " of " + roundsPerExercise
+                    }
                 }
-                else { "Number of exercises: " + roundsPerExercise}
+                else {
+                    "Number of exercises: " + roundsPerExercise
+                }
             }
         }
 
