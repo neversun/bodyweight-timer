@@ -1,8 +1,13 @@
 .import "database.js" as DB
 
 function timerTogglePause() {
-    appWindow.timerRunning = !appWindow.timerRunning;
-    appWindow.timerStartedOnce = true;
+    if(appWindow.timerRunning === true) {
+        appWindow.timerRunning = false;
+    }
+    if(appWindow.timerRunning === false) {
+        appWindow.timerRunning = true;
+    }
+//    appWindow.timerRunning = !appWindow.timerRunning;
 }
 
 function enableBlanking() {
@@ -29,21 +34,25 @@ function resetTimerWithTime(){
     resetCurrentTime();
     progressCircleTimer.restart();
     progressCircleTimer.stop();
+    appWindow.timerStartedOnce = false;
 }
 
 function resetTimerWithTimeSet() {
     resetTimerWithTime();
     resetCurrentSet();
+    appWindow.timerStartedOnce = false;
 }
 
 function resetTimerWithTimeRound(){
     resetTimerWithTime();
     resetCurrentRound();
+    appWindow.timerStartedOnce = false;
 }
 
 function resetTimerWithTimeSetRound() {
     resetTimerWithTimeSet();
     resetCurrentRound();
+    appWindow.timerStartedOnce = false;
 }
 
 function restartTimerAndSet() {
