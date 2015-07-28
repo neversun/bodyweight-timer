@@ -193,7 +193,7 @@ Page {
                 height: Theme.itemSizeMedium
                 width: ListView.view.width
                 minimumValue: 1
-                maximumValue: 100
+                maximumValue: 20
                 stepSize: 1
                 value: model.value
                 valueText: value
