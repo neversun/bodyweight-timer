@@ -97,19 +97,19 @@ function defaultDatabaseValuesFor(exercise) {
     //ε = empty (word)
     switch(exercise){
     case "CircleInterval":
-        value1=1200; value2=0;value3=0;value4=0;value1Desc="duration";value2Desc="ε";value3Desc="ε";value4Desc="ε";explanation="Do as much as you can for the duration of the exercise.\n\nReduce pauses to a minimum.";
+        value1=1200; value2=0;value3=0;value4=0;value1Desc="duration";value2Desc="ε";value3Desc="ε";value4Desc="ε";explanation="Do as much as you can for the duration of the exercise.\n\nReduce pauses to a minimum.\n\nTripple bell = end.";
         break;
     case "SuperSet":
-        value1=240; value2=3;value3=4;value4=0;value1Desc="duration per set";value2Desc="sets per exercise";value3Desc="number exercises";value4Desc="ε";explanation="In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \nFirst pair-exercise should not cause you musle malfunction.";
+        value1=240; value2=3;value3=4;value4=0;value1Desc="duration per set";value2Desc="sets per exercise";value3Desc="number exercises";value4Desc="ε";explanation="In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \nFirst pair-exercise should not cause you musle malfunction.\n\nSingle bell = next set\nDouble bell = next exercise\nTripple bell = end.";
         break;
     case "IntervalSet":
-        value1=180; value2=3;value3=4;value4=0;value1Desc="duration per set";value2Desc="sets per exercise";value3Desc="number exercises";value4Desc="ε";explanation="In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.";
+        value1=180; value2=3;value3=4;value4=0;value1Desc="duration per set";value2Desc="sets per exercise";value3Desc="number exercises";value4Desc="ε";explanation="In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.\n\nSingle bell = next set\nDouble bell = next exercise\nTripple bell = end";
         break;
     case "Ladder":
-        value1=450; value2=4;value3=0;value4=0;value1Desc="duration per exercise";value2Desc="exercises";value3Desc="ε";value4Desc="ε";explanation="Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\nOn muscle malfunction reduce the repetitions by 1, then by another and so forth.\n\nAlready at 1 repetition again and time is not over? Start a new ladder!";
+        value1=450; value2=4;value3=0;value4=0;value1Desc="duration per exercise";value2Desc="exercises";value3Desc="ε";value4Desc="ε";explanation="Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\nOn muscle malfunction reduce the repetitions by 1, then by another and so forth.\n\nAlready at 1 repetition again and time is not over? Start a new ladder!\n\nSingle bell = next exercise\nTripple bell = end";
         break;
     case "Tabata":
-        value1=8; value2=20;value3=10;value4=3;value1Desc="rounds per exercise";value2Desc="duration of active time";value3Desc="duration of pause";value4Desc="number exercises";explanation="During active time (green) move on. During pause time (red) pause.\n\nTry to find your ideal tempo (consistent repetitions).";
+        value1=8; value2=20;value3=10;value4=3;value1Desc="rounds per exercise";value2Desc="duration of active time";value3Desc="duration of pause";value4Desc="number exercises";explanation="During active time (green) move on. During pause time (red) pause.\n\nTry to find your ideal tempo (consistent repetitions).\n\nSingle bell = active time begins\nDouble bell = pause time begins\nTripple bell = next exercise or end.";
         break;
     }
 
