@@ -4,8 +4,10 @@ function timerTogglePause() {
     if(appWindow.timerRunning === true) {
         appWindow.timerRunning = false;
     }
-    if(appWindow.timerRunning === false) {
-        appWindow.timerRunning = true;
+    else {
+        if(appWindow.timerRunning === false) {
+            appWindow.timerRunning = true;
+        }
     }
 //    appWindow.timerRunning = !appWindow.timerRunning;
 }
