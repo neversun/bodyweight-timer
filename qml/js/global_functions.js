@@ -1,6 +1,7 @@
 .import "database.js" as DB
 
 function timerTogglePause() {
+    appWindow.timerStartedOnce = true;
     if(appWindow.timerRunning === true) {
         appWindow.timerRunning = false;
     }
