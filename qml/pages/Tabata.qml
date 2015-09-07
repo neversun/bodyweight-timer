@@ -62,16 +62,28 @@ Page{
     property int currentExercise
     property int numberOfExercises: value4
 
-    onNumberOfExercisesChanged: resetCurrentExercise()
+    onNumberOfExercisesChanged: {
+        resetCurrentExercise();
+        appWindow.maximalExerciseNumber = numberOfExercises;
+    }
+    onCurrentExerciseChanged: appWindow.currentExerciseNumber = currentExercise
 
     //sum of all active times + pauses
     property int remainingSumAllDurations
     property int sumAllDurations: (activeTimeDuration+pauseTimeDuration)*roundsPerExercise
 
-    onSumAllDurationsChanged: resetRemainingSumAllDurations()
+    onSumAllDurationsChanged: {
+        resetRemainingSumAllDurations();
+        appWindow.maximalTime = sumAllDurations;
+    }
+    onRemainingSumAllDurationsChanged: appWindow.currentTime = remainingSumAllDurations
 
     //track the current mode (active or pause)
     property bool isActiveTime: true
+
+    onIsActiveTimeChanged: {
+        appWindow.exerciseActiveTime = isActiveTime;
+    }
 
     // color of ProgressCircle based current mode (active or pause time)
     property string progressCircleColor: "lime"

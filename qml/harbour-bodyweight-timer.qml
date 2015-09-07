@@ -42,6 +42,11 @@ ApplicationWindow
     property bool timerStartedOnce: false
     property bool exerciseActive: false
     property string exerciseActiveName
+    property int currentTime;
+    property int maximalTime;
+    property int currentExerciseNumber;
+    property int maximalExerciseNumber;
+    property int currentSetNumber;
+    property int maximalSetNumber;
+    property bool exerciseActiveTime;
 }
-
-

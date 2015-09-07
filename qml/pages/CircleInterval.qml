@@ -36,13 +36,21 @@ Page{
     property int currentTime
     property int timePerSet:value1
 
-    onTimePerSetChanged: AppFunctions.resetCurrentTime()
+    onTimePerSetChanged: {
+        AppFunctions.resetCurrentTime();
+        appWindow.maximalTime = timePerSet;
+    }
+    onCurrentTimeChanged: appWindow.currentTime = currentTime
 
     // current set of an exercise
     property int currentSet:1
     property int setsPerExercise:1
 
-    onSetsPerExerciseChanged: AppFunctions.resetCurrentSet()
+    onSetsPerExerciseChanged: {
+        AppFunctions.resetCurrentSet();
+        appWindow.maximalExerciseNumber = setsPerExercise;
+    }
+    onCurrentSetChanged: appWindow.currentExerciseNumber = currentSet
     ////
 
     SilicaFlickable {
