@@ -29,21 +29,21 @@ Page {
                 id: header
                 title: "Settings"
             }
-
-            TextSwitch {
-                id: blankingModeSwitch
-                text: "Blanking mode"
-                description: "Disables blanking of screen"
-                checked: blankingDisabled
-                onCheckedChanged: {
-                    if(checked) {
-                        DB.setBlankingDisabled(true);
-                    }
-                    else {
-                        DB.setBlankingDisabled(false);
-                    }
-                }
-            }
+// Keep this option invisible to the user until timer works reliable even on deactivating blanking mode
+//            TextSwitch {
+//                id: blankingModeSwitch
+//                text: "Blanking mode"
+//                description: "Disables blanking of screen"
+//                checked: blankingDisabled
+//                onCheckedChanged: {
+//                    if(checked) {
+//                        DB.setBlankingDisabled(true);
+//                    }
+//                    else {
+//                        DB.setBlankingDisabled(false);
+//                    }
+//                }
+//            }
         }
     }
 }

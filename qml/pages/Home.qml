@@ -27,11 +27,11 @@ Page {
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
-            }
-            MenuItem {
-                text: "Settings"
-                onClicked: pageStack.push(Qt.resolvedUrl("AppSettings.qml"))
-            }
+            }            
+//            MenuItem {
+//                text: "Settings"
+//                onClicked: pageStack.push(Qt.resolvedUrl("AppSettings.qml"))
+//            }
         }
 
         PageHeader {
