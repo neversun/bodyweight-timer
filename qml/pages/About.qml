@@ -22,36 +22,64 @@ Page{
                 width: parent.width
             }
 
-            Label {
-                wrapMode: TextEdit.WordWrap
-                textFormat: Text.RichText;
+            Column {
+                id: portrait
                 width: parent.width
-                color: Theme.primaryColor
-                font.pixelSize: Theme.fontSizeMedium
-                onLinkActivated: {
-                    Qt.openUrlExternally(link)
-                }
-                text:  "<style>a:link { color: " + Theme.highlightColor + "; }</style>" +
-                       //   Github
-                       "Please report issues or request features at <a href=\"https://github.com/neversun/bodyweight-timer\">Github</a> <p><p>" +
-                       //   Icon credits
-                       "Awesome icon made by <a href=\"https://github.com/LinuCC\">LinuCC</a> <p><p>"
-            }
 
-            Label {
-                wrapMode: TextEdit.WordWrap
-                textFormat: Text.RichText;
-                width: parent.width
-                color: Theme.primaryColor
-                font.pixelSize: Theme.fontSizeTiny
-                onLinkActivated: {
-                    Qt.openUrlExternally(link)
+                SectionHeader {
+                    text: 'Made by'
                 }
-                text:  "<style>a:link { color: " + Theme.highlightColor + "; }</style>" +
-                       //   Sound credit
-                       "The sounds:<br>" +
-                       " <a href=\"http://www.freesound.org/people/Benboncan/sounds/66951/\">\"Boxing Bell\"</a> (modifications: 1) shortend length), made by <a href=\"http://www.freesound.org/people/Benboncan/\">Benboncan</a> under <a href=\"http://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a> <br>"+
-                       " <a href=\"http://www.freesound.org/people/Benboncan/sounds/66952/\">\"Boxing Bell\"</a> (modifications: 1) shortend length, 2) Remixed into double bell), made by <a href=\"http://www.freesound.org/people/Benboncan/\">Benboncan</a> under <a href=\"http://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a> <br>"
+
+                Label {
+                    text: 'neversun'
+                    anchors.horizontalCenter: parent.horizontalCenter
+                }
+
+                SectionHeader {
+                    text: 'Source'
+                }
+
+                Label {
+                    text: "github.com"
+                    font.underline: true;
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    MouseArea {
+                        anchors.fill : parent
+                        onClicked: Qt.openUrlExternally("https://github.com/neversun/bodyweight-timer")
+                    }
+                }
+
+                SectionHeader {
+                    text: 'Icon'
+                }
+
+                Label {
+                    text: "Made by LinuCC"
+                    font.underline: true;
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    MouseArea {
+                        anchors.fill : parent
+                        onClicked: Qt.openUrlExternally("https://github.com/LinuCC")
+                    }
+                }
+
+                SectionHeader {
+                    text: 'Credits'
+                }
+
+                Label {
+                    wrapMode: TextEdit.WordWrap
+                    textFormat: Text.RichText;
+                    width: parent.width
+                    color: Theme.primaryColor
+                    font.pixelSize: Theme.fontSizeSmall
+                    onLinkActivated: {
+                        Qt.openUrlExternally(link)
+                    }
+                    text:  "<style>a:link { color: " + Theme.primaryColor + "; }</style>" +
+                           "<a href=\"http://www.freesound.org/people/Benboncan/sounds/66951/\">\"Boxing Bell\"</a> (modifications: 1. shortend length), made by <a href=\"http://www.freesound.org/people/Benboncan/\">Benboncan</a> under <a href=\"http://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>)<p></p>"+
+                           "<a href=\"http://www.freesound.org/people/Benboncan/sounds/66952/\">\"Boxing Bell\"</a> (modifications: 1. shortend length, 2. Remixed into double bell), made by <a href=\"http://www.freesound.org/people/Benboncan/\">Benboncan</a> under <a href=\"http://creativecommons.org/licenses/by/3.0/\">CC BY 3.0</a>)"
+                }
             }
         }
     }
