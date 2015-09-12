@@ -1,6 +1,16 @@
-# bodyweight-timer
+![](https://raw.githubusercontent.com/neversun/bodyweight-timer/master/harbour-bodyweight-timer.png) Bodyweight timer for Sailfish OS
+=============================
 
-time supporting app for traing purposes (bodyweight-training) on Jolla Sailfish OS
+Loving bodyweight training? Then give this utility a try and allow your ordinary clock a pause.
+
+This app comes with different timers for different kinds of training methods (inspired by "Bodyweight  Training" by Marc Lauren).
+
+Currently supported training methods:
+* Circle interval
+* Interval set
+* Ladder
+* Super set
+* Tabata
 
 ## Planned features
 * Enable/Disable Sounds
@@ -9,5 +19,4 @@ time supporting app for traing purposes (bodyweight-training) on Jolla Sailfish 
 * Naming of exercises
 * Translations
 * Additional training methods
-* Nicer active covers
 * Saveable presets for each training method
