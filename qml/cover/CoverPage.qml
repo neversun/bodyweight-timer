@@ -32,21 +32,119 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
+
+    property bool exerciseActiveTime: appWindow.exerciseActiveTime
+
+    property string activeTimeColor: "lime"
+    property string pauseTimeColor: "red"
+
+    function formatSecondsToMinuteSeconds(seconds) {
+        var displayMinutes = Math.floor(seconds/60);
+        var displaySeconds = seconds-(displayMinutes*60);
+
+        if(displaySeconds.toString().length === 1) {
+            displaySeconds = "0"+ displaySeconds;
+        }
+        if(displayMinutes.toString().length === 1) {
+            displayMinutes = "0"+ displayMinutes;
+        }
+        return displayMinutes+":"+displaySeconds;
+    }
+
+    function showPlaceholder() {
+        coverPause.enabled = false
+        coverTitle.visible = false
+        coverTime.visible = false
+        coverExerciseNumber.visible = false
+        coverSetNumber.visible = false
+        coverTimeLabel.visible = false
+        coverSetLabel.visible = false
+        coverExerciseLabel.visible = false
+
+        coverTime.color = Theme.primaryColor
+
+        placeholder.visible = true
+    }
+
+    function setColorActiveTime(isActiveTime) {
+        if(appWindow.exerciseActiveName === "Tabata") {
+            if(exerciseActiveTime) {
+                coverTime.color = activeTimeColor
+            } else {
+                coverTime.color = pauseTimeColor
+            }
+        }
+    }
+
     // TODO: Peeking shows, if changed, old status
     onStatusChanged: {
-        if(status !== Cover.Inactive && appWindow.exerciseActive) {
-            coverAction.enabled = true
+        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Circle interval") {
+            showPlaceholder();
+            coverPause.enabled = true
             coverTitle.visible = true
+            coverTime.visible = true
+            coverTimeLabel.visible = true
+
+            placeholder.visible = false
+        }
+        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Interval set") {
+            showPlaceholder();
+            coverPause.enabled = true
+            coverTitle.visible = true
+            coverTime.visible = true
+            coverExerciseNumber.visible = true
+            coverSetNumber.visible = true
+            coverTimeLabel.visible = true
+            coverSetLabel.visible = true
+            coverExerciseLabel.visible = true
+
+            placeholder.visible = false
+        }
+        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Ladder") {
+            showPlaceholder();
+            coverPause.enabled = true
+            coverTitle.visible = true
+            coverTime.visible = true
+            coverExerciseNumber.visible = true
+            coverTimeLabel.visible = true
+            coverExerciseLabel.visible = true
+
+            placeholder.visible = false
+        }
+        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Super set") {
+            showPlaceholder();
+            coverPause.enabled = true
+            coverTitle.visible = true
+            coverTime.visible = true
+            coverExerciseNumber.visible = true
+            coverSetNumber.visible = true
+            coverTimeLabel.visible = true
+            coverSetLabel.visible = true
+            coverExerciseLabel.visible = true
+
+            placeholder.visible = false
+        }
+        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Tabata") {
+            showPlaceholder();
+            coverPause.enabled = true
+            coverTitle.visible = true
+            coverTime.visible = true
+            coverExerciseNumber.visible = true
+            coverTimeLabel.visible = true
+            coverExerciseLabel.visible = true
+
+            coverTime.color = activeTimeColor
 
             placeholder.visible = false
         }
         if(!appWindow.exerciseActive) {
-            coverAction.enabled = false
-            coverTitle.visible = false
-
-            placeholder.visible = true
+            showPlaceholder();
         }
+
+        setColorActiveTime(exerciseActiveTime)
     }
+
+    onExerciseActiveTimeChanged: setColorActiveTime(exerciseActiveTime)
 
     CoverPlaceholder {
                 id: placeholder
@@ -57,22 +155,128 @@ CoverBackground {
                 }
             }
 
+    Column {
+        width: parent.width
+        spacing: Theme.paddingSmall
+        anchors {
+           left: parent.left
+           right: parent.right
+           margins: Theme.paddingLarge
+        }
 
-    Label {
-        id: coverTitle
-        visible: false
-        anchors.centerIn: parent
-        color: Theme.primaryColor
-        text: appWindow.exerciseActiveName
-    }
+        Label {
+            id: coverTitle
+            font.pixelSize: Theme.fontSizeTiny
+            visible: false
+            horizontalAlignment: Text.AlignLeft
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+            color: Theme.primaryColor
+            text: appWindow.exerciseActiveName
+        }
 
-    CoverActionList {
-        id: coverAction
-        enabled: false
+        Label {
+            id: coverTimeLabel
+            text: 'time'
+            visible: false
+            color: Theme.secondaryColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignLeft
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+        }
 
-        CoverAction {
-            iconSource: appWindow.timerRunning ? "image://theme/icon-cover-pause" : "image://theme/icon-cover-play"
-            onTriggered: appWindow.timerRunning = !appWindow.timerRunning
+        Label {
+            id: coverTime
+            visible: false
+            text: formatSecondsToMinuteSeconds(appWindow.currentTime) + "/" + formatSecondsToMinuteSeconds(appWindow.maximalTime)
+            horizontalAlignment: Text.AlignHCenter
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+        }
+
+        Label {
+            id: coverSetLabel
+            text: 'set'
+            visible: false
+            color: Theme.secondaryColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignLeft
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+        }
+
+        Label {
+            id: coverSetNumber
+            visible: false
+            color: Theme.primaryColor
+            text: {
+                var currentSet;
+                if(appWindow.currentSetNumber > appWindow.maximalSetNumber) {
+                    currentSet = appWindow.maximalSetNumber;
+                } else {
+                    currentSet = appWindow.currentSetNumber;
+                }
+
+                currentSet+ "/" + appWindow.maximalSetNumber
+            }
+            horizontalAlignment: Text.AlignHCenter
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+        }
+
+        Label {
+            id: coverExerciseLabel
+            text: 'exercise'
+            visible: false
+            color: Theme.secondaryColor
+            font.pixelSize: Theme.fontSizeSmall
+            horizontalAlignment: Text.AlignLeft
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+        }
+
+        Label {
+            id: coverExerciseNumber
+            visible: false
+            color: Theme.primaryColor
+            text: {
+                var currentExercise;
+                if(appWindow.currentExerciseNumber > appWindow.maximalExerciseNumber) {
+                    currentExercise = appWindow.maximalExerciseNumber;
+                } else {
+                    currentExercise = appWindow.currentExerciseNumber;
+                }
+
+                currentExercise+ "/" + appWindow.maximalExerciseNumber
+            }
+            horizontalAlignment: Text.AlignHCenter
+            anchors {
+               left: parent.left
+               right: parent.right
+            }
+        }
+
+        CoverActionList {
+            id: coverPause
+            enabled: false
+
+            CoverAction {
+                iconSource: appWindow.timerRunning ? "image://theme/icon-cover-pause" : "image://theme/icon-cover-play"
+                onTriggered: appWindow.timerRunning = !appWindow.timerRunning
+            }
         }
     }
 }
