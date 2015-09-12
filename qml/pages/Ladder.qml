@@ -29,6 +29,11 @@ Page{
             appWindow.exerciseActiveName = title
             AppFunctions.enableBlanking()
         }
+
+        if(status === PageStatus.Active) {
+            AppFunctions.enableBlanking()
+        }
+
         if (status === PageStatus.Deactivating) {
             AppFunctions.disableBlanking()
         }
