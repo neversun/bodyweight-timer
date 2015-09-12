@@ -124,7 +124,7 @@ Page {
                 text: "Reset to default"
                 onClicked: {
                     DB.defaultDatabaseValuesFor(page)
-                    pageStack.replace(Qt.resolvedUrl("Settings.qml"),{ page:page,title:title }, false )
+                    pageStack.replace(Qt.resolvedUrl("ExerciseSettings.qml"),{ page:page,title:title }, false )
                 }
             }
         }
