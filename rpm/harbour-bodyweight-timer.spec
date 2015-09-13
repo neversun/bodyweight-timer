@@ -64,8 +64,17 @@ desktop-file-install --delete-original       \
 %files
 %defattr(-,root,root,-)
 %{_bindir}
+%{_datadir}
 %{_datadir}/%{name}
+%{_datadir}/%{name}/lib/harbour/bodyweight-timer/insomniac
+%{_datadir}/%{name}/lib/harbour/bodyweight-timer
+%{_datadir}/%{name}/lib/harbour
+%{_datadir}/%{name}/translations
+%{_datadir}/%{name}/qml
+%{_datadir}/%{name}/sounds
 %{_datadir}/applications/%{name}.desktop
 %{_datadir}/icons/hicolor/86x86/apps/%{name}.png
+%{_bindir}/%{name}
+%{_bindir}
 # >> files
 # << files

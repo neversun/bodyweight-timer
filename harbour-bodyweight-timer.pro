@@ -10,41 +10,24 @@
 #   - translation filenames have to be changed
 
 # The name of your application
-TARGET = harbour-bodyweight-timer
-
 CONFIG += sailfishapp
-CONFIG += c++11
+
+TARGET = harbour-bodyweight-timer
 
 QT += network dbus
 
-SOURCES += src/harbour-bodyweight-timer.cpp \
+SOURCES = \
+    src/harbour-bodyweight-timer.cpp \
     src/applibrary.cpp
 
-OTHER_FILES += qml/harbour-bodyweight-timer.qml \
-    qml/cover/CoverPage.qml \
-    rpm/harbour-bodyweight-timer.changes.in \
-    rpm/harbour-bodyweight-timer.spec \
-    rpm/harbour-bodyweight-timer.yaml \
-    translations/*.ts \
-    harbour-bodyweight-timer.desktop \
-    qml/components/TimePickerMinutesSeconds.qml \
-    qml/js/database.js \
-    qml/pages/sound/tripple_boxing-bell.wav \
-    qml/pages/sound/single_boxing-bell.wav \
-    qml/pages/About.qml \
-    qml/pages/CircleInterval.qml \
-    qml/pages/Home.qml \
-    qml/pages/IntervalSet.qml \
-    qml/pages/Ladder.qml \
-    qml/pages/SuperSet.qml \
-    qml/pages/Tabata.qml \
-    qml/pages/TimerPickerDialogMinutesSeconds.qml \
-    qml/js/global_functions.js \
-    harbour-bodyweight-timer.png \
-    qml/cover/cover.png \
-    qml/pages/ExerciseSettings.qml \
-    qml/pages/AppSettings.qml \
-    qml/pages/sound/double_boxing-bell.wav
+
+OTHER_FILES += qml/*.qml \
+    qml/cover/*.qml \
+    qml/components/*.qml \
+    qml/pages/*.qml \
+    js/*.js \
+    rpm/*.spec \
+    rpm/harbour-bodyweight-timer.yaml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -59,3 +42,6 @@ TRANSLATIONS += translations/harbour-bodyweight-timer-de.ts
 HEADERS += \
     src/applibrary.h
 
+# on adding the following lines, project can not produce an executeable
+TEMPLATE = subdirs
+SUBDIRS = src/insomniac
