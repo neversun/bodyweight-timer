@@ -1,5 +1,5 @@
 TEMPLATE = lib
-PROJECT = bodyweight-timer
+PROJECT = bodyweighttimer
 TARGET = insomniac
 QT += quick
 QT -= gui

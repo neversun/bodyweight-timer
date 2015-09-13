@@ -1,2 +1,2 @@
-module harbour-bodyweight-timer
+module harbour.bodyweighttimer.insomniac
 plugin insomniac

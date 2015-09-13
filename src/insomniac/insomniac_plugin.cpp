@@ -5,7 +5,7 @@
 
 void InsomniacPlugin::registerTypes(const char *uri)
 {
-    // @uri harbour.kitchentimer.insomniac
+    // @uri harbour.bodyweighttimer.insomniac
     qmlRegisterType<Insomniac>(uri, 1, 0, "Insomniac");
 }
 

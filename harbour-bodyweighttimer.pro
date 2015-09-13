@@ -12,12 +12,12 @@
 # The name of your application
 CONFIG += sailfishapp
 
-TARGET = harbour-bodyweight-timer
+TARGET = harbour-bodyweighttimer
 
 QT += network dbus
 
 SOURCES = \
-    src/harbour-bodyweight-timer.cpp \
+    src/harbour-bodyweighttimer.cpp \
     src/applibrary.cpp
 
 
@@ -27,7 +27,7 @@ OTHER_FILES += qml/*.qml \
     qml/pages/*.qml \
     js/*.js \
     rpm/*.spec \
-    rpm/harbour-bodyweight-timer.yaml
+    rpm/harbour-bodyweighttimer.yaml
 
 # to disable building translations every time, comment out the
 # following CONFIG line
@@ -37,11 +37,8 @@ CONFIG += sailfishapp_i18n
 # planning to localize your app, remember to comment out the
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
-TRANSLATIONS += translations/harbour-bodyweight-timer-de.ts
-
-HEADERS += \
-    src/applibrary.h
+TRANSLATIONS += translations/harbour-bodyweighttimer-de.ts
 
 # on adding the following lines, project can not produce an executeable
 TEMPLATE = subdirs
-SUBDIRS = src/insomniac
+SUBDIRS = src/insomniac src

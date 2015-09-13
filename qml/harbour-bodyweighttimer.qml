@@ -30,7 +30,7 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import harbour.kitchentimer.insomniac 1.0
+import harbour.bodyweighttimer.insomniac 1.0
 import "pages"
 
 ApplicationWindow
@@ -50,4 +50,16 @@ ApplicationWindow
     property int currentSetNumber
     property int maximalSetNumber
     property bool exerciseActiveTime: true
+
+    Insomniac {
+        id: insomniac;
+        repeat: false;
+        timerWindow: 10;
+        onTimeout: {
+            wakeUp();
+        }
+        onError: {
+            console.warn('Error in wake-up timer');
+        }
+    }
 }
