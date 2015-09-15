@@ -16,16 +16,14 @@ TARGET = harbour-bodyweighttimer
 
 QT += network dbus
 
-SOURCES = \
-    src/harbour-bodyweighttimer.cpp \
-    src/applibrary.cpp
-
+SOURCES += \
+    src/harbour-bodyweighttimer.cpp
 
 OTHER_FILES += qml/*.qml \
     qml/cover/*.qml \
     qml/components/*.qml \
     qml/pages/*.qml \
-    js/*.js \
+    qml/js/*.js \
     rpm/*.spec \
     rpm/harbour-bodyweighttimer.yaml
 
@@ -39,6 +37,5 @@ CONFIG += sailfishapp_i18n
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-bodyweighttimer-de.ts
 
-# on adding the following lines, project can not produce an executeable
 TEMPLATE = subdirs
 SUBDIRS = src/insomniac src

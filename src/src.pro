@@ -10,12 +10,10 @@ CONFIG += sailfishapp
 QT += dbus
 #declarative
 
-SOURCES += $${TARGET}.cpp #\
-    #qmlsettings.cpp \
-    #display.cpp
+SOURCES += $${TARGET}.cpp \
+    applibrary.cpp
 
-#HEADERS += qmlsettings.h \
-#    display.h
+HEADERS += applibrary.h
 
 CONFIG(release, debug|release) {
     DEFINES += QT_NO_DEBUG_OUTPUT
