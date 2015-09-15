@@ -28,25 +28,36 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-import QtQuick 2.0
-import Sailfish.Silica 1.0
-import "pages"
+#ifdef QT_QML_DEBUG
+#include <QtQuick>
+#endif
 
-ApplicationWindow
+#include <sailfishapp.h>
+#include "applibrary.h"
+
+int main(int argc, char *argv[])
 {
-    id: appWindow
-    initialPage: Qt.resolvedUrl("pages/Home.qml")
-    cover: Qt.resolvedUrl("cover/CoverPage.qml")
+    // SailfishApp::main() will display "qml/template.qml", if you need more
+    // control over initialization, you can use:
+    //
+    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
+    //   - SailfishApp::createView() to get a new QQuickView * instance
+    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
+    //
+    // To display the view, call "show()" (will show fullscreen on device).
 
-    property bool timerRunning: false
-    property bool timerStartedOnce: false
-    property bool exerciseActive: false
-    property string exerciseActiveName
-    property int currentTime
-    property int maximalTime
-    property int currentExerciseNumber
-    property int maximalExerciseNumber
-    property int currentSetNumber
-    property int maximalSetNumber
-    property bool exerciseActiveTime: true
+    QGuiApplication *app = SailfishApp::application(argc, argv);
+    QQuickView *view = SailfishApp::createView();
+
+    appLibrary* applib = new appLibrary();
+    view->rootContext()->setContextProperty("appLibrary", applib);
+
+    qDebug() << "Import path" << SailfishApp::pathTo("lib/").toLocalFile();
+    view->engine()->addImportPath(SailfishApp::pathTo("lib/").toLocalFile());
+
+    view->setSource(SailfishApp::pathTo("qml/harbour-bodyweighttimer.qml"));
+
+    view->showFullScreen();
+    app->exec();
 }
+

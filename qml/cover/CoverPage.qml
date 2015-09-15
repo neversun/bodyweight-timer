@@ -79,14 +79,6 @@ CoverBackground {
 
     // TODO: Peeking shows, if changed, old status
     onStatusChanged: {
-        if(status === Cover.Activating && appWindow.exerciseActive) {
-            AppFunctions.enableBlanking()
-        }
-
-        if(status === Cover.Active && appWindow.exerciseActive){
-            AppFunctions.enableBlanking()
-        }
-
         if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Circle interval") {
             showPlaceholder();
             coverPause.enabled = true

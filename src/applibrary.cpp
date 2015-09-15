@@ -1,4 +1,4 @@
-#include "src/applibrary.h"
+#include "applibrary.h"
 #include <QDBusConnection>
 #include <QDBusInterface>
 

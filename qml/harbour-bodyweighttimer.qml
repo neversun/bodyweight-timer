@@ -28,33 +28,47 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-#ifdef QT_QML_DEBUG
-#include <QtQuick>
-#endif
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+import harbour.bodyweighttimer.insomniac 1.0
+import "pages"
+import "js/global_functions.js" as AppFunctions
 
-#include <sailfishapp.h>
-#include <src/applibrary.h>
-
-
-int main(int argc, char *argv[])
+ApplicationWindow
 {
-    // SailfishApp::main() will display "qml/template.qml", if you need more
-    // control over initialization, you can use:
-    //
-    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
-    //   - SailfishApp::createView() to get a new QQuickView * instance
-    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
-    //
-    // To display the view, call "show()" (will show fullscreen on device).
+    id: appWindow
+    initialPage: Qt.resolvedUrl("pages/Home.qml")
+    cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    QGuiApplication *app = SailfishApp::application(argc, argv);
-    QQuickView *view = SailfishApp::createView();
+    property bool timerRunning: false
+    property bool timerStartedOnce: false
+    property bool exerciseActive: false
+    property string exerciseActiveName
+    property int currentTime
+    property int maximalTime
+    property int currentExerciseNumber
+    property int maximalExerciseNumber
+    property int currentSetNumber
+    property int maximalSetNumber
+    property bool exerciseActiveTime: true
 
-    appLibrary* applib = new appLibrary();
-    view->rootContext()->setContextProperty("appLibrary", applib);
-    view->setSource(SailfishApp::pathTo("qml/harbour-bodyweight-timer.qml"));
+    Component.onCompleted: {
+        insomniac.interval = 1;
+        insomniac.start();
+    }
 
-    view->showFullScreen();
-    app->exec();
+    Insomniac {
+        id: insomniac;
+        repeat: false;
+        timerWindow: 10;
+        onTimeout: {
+            // console.log("insomniac timed out")
+            AppFunctions.setBlanking();
+            insomniac.interval = 10;
+            insomniac.start();
+        }
+        onError: {
+            console.warn('Error in wake-up timer');
+        }
+    }
 }
-
