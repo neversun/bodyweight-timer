@@ -32,6 +32,7 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 import harbour.bodyweighttimer.insomniac 1.0
 import "pages"
+import "js/global_functions.js" as AppFunctions
 
 ApplicationWindow
 {
@@ -51,12 +52,20 @@ ApplicationWindow
     property int maximalSetNumber
     property bool exerciseActiveTime: true
 
+    Component.onCompleted: {
+        insomniac.interval = 1;
+        insomniac.start();
+    }
+
     Insomniac {
         id: insomniac;
         repeat: false;
         timerWindow: 10;
         onTimeout: {
-            wakeUp();
+            // console.log("insomniac timed out")
+            AppFunctions.setBlanking();
+            insomniac.interval = 10;
+            insomniac.start();
         }
         onError: {
             console.warn('Error in wake-up timer');

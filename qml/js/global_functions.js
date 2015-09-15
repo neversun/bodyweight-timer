@@ -13,12 +13,8 @@ function timerTogglePause() {
 //    appWindow.timerRunning = !appWindow.timerRunning;
 }
 
-function enableBlanking() {
+function setBlanking() {
     appLibrary.setBlankingMode(DB.isBlankingDisabled())
-}
-
-function disableBlanking() {
-    appLibrary.setBlankingMode(false);
 }
 
 function resetCurrentSet() {
