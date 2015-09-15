@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/neversun/bodyweight-timer/master/harbour-bodyweight-timer.png) Bodyweight timer for Sailfish OS
+![](https://raw.githubusercontent.com/neversun/bodyweight-timer/master/harbour-bodyweighttimer.png) Bodyweight timer for Sailfish OS
 =============================
 
 Loving bodyweight training? Then give this utility a try and allow your ordinary clock a pause.
