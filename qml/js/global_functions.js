@@ -14,7 +14,8 @@ function timerTogglePause() {
 }
 
 function setBlanking() {
-    appLibrary.setBlankingMode(DB.isBlankingDisabled())
+//  appLibrary.setBlankingMode(DB.isBlankingDisabled())
+    appLibrary.setBlankingMode(true)
 }
 
 function resetCurrentSet() {
