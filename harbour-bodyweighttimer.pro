@@ -26,7 +26,10 @@ OTHER_FILES += qml/*.qml \
     qml/js/*.js \
     rpm/*.spec \
     rpm/harbour-bodyweighttimer.yaml \
-    qml/pages/sound/*.wav
+    qml/pages/sound/*.wav \
+    harbour-bodyweighttimer.png \
+    qml/cover/cover.png \
+    harbour-bodyweighttimer.desktop
 
 # to disable building translations every time, comment out the
 # following CONFIG line
