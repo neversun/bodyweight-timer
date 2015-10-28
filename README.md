@@ -20,3 +20,4 @@ Currently supported training methods:
 * Translations
 * Additional training methods
 * Saveable presets for each training method
+* After playing a sound notification, resume with e.g. media player 
