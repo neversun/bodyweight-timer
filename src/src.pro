@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-TARGET = harbour-bodyweighttimer
+TARGET = harbour-bodyweight-timer
 
 # App version
 DEFINES += APP_VERSION=\"\\\"$${VERSION}\\\"\"
