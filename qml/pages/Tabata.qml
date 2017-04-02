@@ -241,7 +241,7 @@ Page{
             font.pixelSize: Theme.fontSizeMedium
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
-                    "current excerise: " + currentExercise + " of " + numberOfExercises
+                    "current exercise: " + currentExercise + " of " + numberOfExercises
                 }
                 else { "Number of exercises: " + numberOfExercises}
             }
