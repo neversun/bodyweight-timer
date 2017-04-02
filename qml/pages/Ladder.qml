@@ -152,10 +152,10 @@ Page{
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
                     if(currentRound <= roundsPerExercise) {
-                        "current excerise: " + currentRound + " of " + roundsPerExercise
+                        "current exercise: " + currentRound + " of " + roundsPerExercise
                     }
                     else {
-                        "current excerise: " + roundsPerExercise + " of " + roundsPerExercise
+                        "current exercise: " + roundsPerExercise + " of " + roundsPerExercise
                     }
                 }
                 else {
