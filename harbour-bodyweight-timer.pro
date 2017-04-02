@@ -14,10 +14,14 @@ CONFIG += sailfishapp
 
 TARGET = harbour-bodyweight-timer
 
-QT += network dbus
-
 SOURCES += \
     src/harbour-bodyweight-timer.cpp
+
+QT += network dbus
+
+icons.path = /usr/share/icons/hicolor
+icons.files = icons/*
+INSTALLS += icons
 
 OTHER_FILES += qml/*.qml \
     qml/cover/*.qml \
@@ -29,7 +33,11 @@ OTHER_FILES += qml/*.qml \
     qml/pages/sound/*.wav \
     harbour-bodyweight-timer.png \
     qml/cover/cover.png \
-    harbour-bodyweight-timer.desktop
+    harbour-bodyweight-timer.desktop \
+    icons/86x86/apps/harbouy-bodyweight-timer.png \
+    icons/108x108/apps/harbouy-bodyweight-timer.png \
+    icons/128x128/apps/harbouy-bodyweight-timer.png \
+    icons/256x256/apps/harbouy-bodyweight-timer.png \
 
 # to disable building translations every time, comment out the
 # following CONFIG line
