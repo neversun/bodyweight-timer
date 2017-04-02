@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 X-Nemo-Application-Type=silica-qt5
-Icon=harbour-bodyweighttimer
-Exec=harbour-bodyweighttimer
+Icon=harbour-bodyweight-timer
+Exec=harbour-bodyweight-timer
 Name=Bodyweight Timer
 # translation example:
 # your app name in German locale (de)
