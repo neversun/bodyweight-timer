@@ -40,6 +40,3 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-bodyweighttimer-de.ts
-
-TEMPLATE = subdirs
-SUBDIRS = src/insomniac src

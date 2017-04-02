@@ -17,6 +17,10 @@ Page {
         }
     }
 
+    ScreenBlank {
+      enabled: appWindow.exerciseActive
+    }
+
     SilicaFlickable {
         id: flickerList
         anchors.fill: parent
@@ -27,7 +31,7 @@ Page {
             MenuItem {
                 text: "About"
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
-            }            
+            }
 //            MenuItem {
 //                text: "Settings"
 //                onClicked: pageStack.push(Qt.resolvedUrl("AppSettings.qml"))
