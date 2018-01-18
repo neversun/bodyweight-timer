@@ -18,7 +18,7 @@ Page{
             spacing: Theme.paddingMedium
 
             PageHeader {
-                title: "About"
+                title: qsTrId('about')
                 width: parent.width
             }
 
@@ -26,17 +26,13 @@ Page{
                 id: portrait
                 width: parent.width
 
-                SectionHeader {
-                    text: 'Made by'
-                }
-
                 Label {
-                    text: 'neversun'
+                    text: qsTrId('made-by').arg('neversun')
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
 
                 SectionHeader {
-                    text: 'Source'
+                    text: qsTrId('source-code')
                 }
 
                 Label {
@@ -50,11 +46,12 @@ Page{
                 }
 
                 SectionHeader {
-                    text: 'Icon'
+                    text: qsTrId('icon')
                 }
 
                 Label {
-                    text: "Made by LinuCC"
+                    //% "Made by %1"
+                    text: qsTrId('made-by').arg('LinuCC')
                     font.underline: true;
                     anchors.horizontalCenter: parent.horizontalCenter
                     MouseArea {
@@ -64,7 +61,7 @@ Page{
                 }
 
                 SectionHeader {
-                    text: 'Credits'
+                    text: qsTrId('credits')
                 }
 
                 Label {

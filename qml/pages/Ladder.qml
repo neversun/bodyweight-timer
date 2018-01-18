@@ -11,29 +11,20 @@ Page{
     property variant    page
     property variant    title
 
-    // parameters from DB
-    property variant    value1ReturnFromDB
-    property variant    value2ReturnFromDB
-    property int        value1
-    property int        value2
-
     onStatusChanged: {
-        if(status === PageStatus.Activating)
-        {
-            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
-            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
-            value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2")
-            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0]
-
-            appWindow.exerciseActive = true
-            appWindow.exerciseActiveName = title
+        if(status === PageStatus.Activating) {
+            DB.getDatabaseValuesFor(page, function (columValues) {
+                exercisePage.timePerSet = columValues.value1.value
+                exercisePage.roundsPerExercise = columValues.value2.value
+                appWindow.exerciseActive = true
+                appWindow.exerciseActiveName = title
+            })
         }
     }
 
     //##    page internal properties
-    // current time
     property int currentTime
-    property int timePerSet:value1
+    property int timePerSet
 
     onTimePerSetChanged: {
         AppFunctions.resetCurrentTime();
@@ -43,7 +34,7 @@ Page{
 
     // current round from high to low
     property int currentRound
-    property int roundsPerExercise:value2
+    property int roundsPerExercise
 
     onRoundsPerExerciseChanged: {
         AppFunctions.resetCurrentRound();
@@ -58,7 +49,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: "Settings"
+                text: qsTrId("settings")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title});
                     AppFunctions.resetTimerWithTimeRound();
@@ -94,7 +85,9 @@ Page{
             text: {
                 var displayMinutes = Math.floor(currentTime/60);
                 var displaySeconds = currentTime-(displayMinutes*60)
-                displayMinutes+"m "+displaySeconds+"s"
+                //% "%1m %2s"
+                //: m = minute, s = second
+                qsTrId('minutes-and-seconds').arg(displayMinutes).arg(displaySeconds)
             }
             font.pixelSize: Theme.fontSizeHuge
         }
@@ -152,14 +145,15 @@ Page{
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
                     if(currentRound <= roundsPerExercise) {
-                        "current exercise: " + currentRound + " of " + roundsPerExercise
+                        //% "current exercise: %1 of %2"
+                        qsTrId("current-exercise").arg(currentRound).arg(roundsPerExercise)
                     }
                     else {
-                        "current exercise: " + roundsPerExercise + " of " + roundsPerExercise
+                        //% "current exercise: %1 of %2"
+                        qsTrId("current-exercise").arg(roundsPerExercise).arg(roundsPerExercise)
                     }
-                }
-                else {
-                    "Number of exercises: " + roundsPerExercise
+                } else {
+                    return ''
                 }
             }
         }
@@ -171,14 +165,14 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                    "Pause"
+                   qsTrId("pause")
                 }
                 else {
                     if(appWindow.timerStartedOnce) {
-                        "Resume"
+                        qsTrId("resume")
                     }
                     else {
-                        "Start"
+                        qsTrId("start")
                     }
                 }
             }
