@@ -11,23 +11,15 @@ Page{
     property variant    page
     property variant    title
 
-    // parameters from DB
-    property variant    value1ReturnFromDB
-    property variant    value2ReturnFromDB
-    property variant    value3ReturnFromDB
-    property int        value1
-    property int        value2
-    property int        value3
-
-    // initialize page properties once page is fully loaded
     onStatusChanged: {
         if(status === PageStatus.Activating) {
-            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
-            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
-            value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2")
-            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0]
-            value3ReturnFromDB = DB.getDatabaseValuesFor(page,"value3")
-            onValue3ReturnFromDBchanged: value3 = value3ReturnFromDB[0]
+            DB.getDatabaseValuesFor(page, function (columValues) {
+                exercisePage.timePerSet = columValues.value1.value
+                exercisePage.setsPerExercise = columValues.value2.value
+                exercisePage.roundsPerExercise = columValues.value3.value
+                appWindow.exerciseActive = true
+                appWindow.exerciseActiveName = title
+            })
 
             appWindow.exerciseActive = true
             appWindow.exerciseActiveName = title
@@ -35,9 +27,8 @@ Page{
     }
 
     //##    page internal properties
-    // current time
     property int currentTime
-    property int timePerSet:value1
+    property int timePerSet
 
     onTimePerSetChanged: {
         AppFunctions.resetCurrentTime();
@@ -47,7 +38,7 @@ Page{
 
     // current set of an exercise
     property int currentSet
-    property int setsPerExercise:value2
+    property int setsPerExercise
 
     onSetsPerExerciseChanged: {
         AppFunctions.resetCurrentSet();
@@ -58,7 +49,7 @@ Page{
 
     // current round from high to low
     property int currentRound
-    property int roundsPerExercise:value3
+    property int roundsPerExercise
 
     onRoundsPerExerciseChanged: {
         AppFunctions.resetCurrentRound();
@@ -73,7 +64,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: "Settings"
+                text: qsTrId("settings")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title});
                     AppFunctions.resetTimerWithTimeSetRound();
@@ -110,7 +101,9 @@ Page{
             text: {
                 var displayMinutes = Math.floor(currentTime/60);
                 var displaySeconds = currentTime-(displayMinutes*60)
-                displayMinutes+"m "+displaySeconds+"s"
+                //% "%1m %2s"
+                //: m = minute, s = second
+                qsTrId("minutes-and-seconds").arg(displayMinutes).arg(displaySeconds)
             }
         }
 
@@ -171,17 +164,19 @@ Page{
             anchors.verticalCenterOffset : (Theme.itemSizeMedium)+progressCircle.height
             font.pixelSize: Theme.fontSizeMedium
             text: {
-                if(progressCircleTimer.running || appWindow.timerStartedOnce) {
-                    if(currentSet <= setsPerExercise) {
-                        "current set: " + currentSet + " of " + setsPerExercise
-                    }
-                    else {
-                        "current set: " + setsPerExercise + " of " + setsPerExercise
-                    }
-                }
-                else {
-                    "Sets for each exercise: " + setsPerExercise
-                }
+               if(progressCircleTimer.running || appWindow.timerStartedOnce) {
+                   if(currentSet <= setsPerExercise) {
+                       //% "current set: %1 of %2"
+                       qsTrId("current-set").arg(currentSet).arg(setsPerExercise)
+                   }
+                   else {
+                       //% "current set: %1 of %2"
+                       qsTrId("current-set").arg(setsPerExercise).arg(setsPerExercise)
+                   }
+               } else {
+                   //% "Sets for each exercise: %1"
+                   qsTrId("sets-per-exercise--with-number").arg(setsPerExercise)
+               }
             }
         }
         Label {
@@ -192,9 +187,11 @@ Page{
             font.pixelSize: Theme.fontSizeMedium
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
-                    "current exercise: " + currentRound + " of " + roundsPerExercise
+                    //% "current exercise: %1 of %2"
+                    return qsTrId("current-exercise").arg(currentRound).arg(roundsPerExercise)
+                } else {
+                    return ''
                 }
-                else { "Number of exercises: " + roundsPerExercise}
             }
         }
 
@@ -206,14 +203,14 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                    "Pause"
+                   qsTrId("pause")
                 }
                 else {
                     if(appWindow.timerStartedOnce) {
-                        "Resume"
+                        qsTrId("resume")
                     }
                     else {
-                        "Start"
+                        qsTrId("start")
                     }
                 }
             }

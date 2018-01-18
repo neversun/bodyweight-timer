@@ -21,3 +21,22 @@ Currently supported training methods:
 * Additional training methods
 * Saveable presets for each training method
 * After playing a sound notification, resume with e.g. media player 
+
+
+# Adding translations
+
+For adding the language german (de) do the following:
+
+1. copy the file `translations/harbour-bodyweight-timer.ts` to `translations/harbour-bodyweight-timer-de.ts`.
+1. For every added translation remove `type="unfinished"` from that item.
+1. Extend `TRANSLATIONS` section in `harbour-bodyweight-timer.pro`. See example
+
+## Extend TRANSLATIONS example
+```
+TRANSLATIONS += translations/harbour-bodyweight-timer-en.ts \
+                translations/harbour-bodyweight-timer-de.ts
+```
+
+### Troubleshooting
+
+String are not displayed translated: Check with `lupdate harbour-bodyweight-timer.pro` for **any** (!) errors or warning and fix those.

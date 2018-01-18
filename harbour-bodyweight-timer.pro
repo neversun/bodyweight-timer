@@ -10,9 +10,14 @@
 #   - translation filenames have to be changed
 
 # The name of your application
+TARGET = harbour-bodyweight-timer
+
 CONFIG += sailfishapp
 
-TARGET = harbour-bodyweight-timer
+lupdate_only {
+SOURCES =   qml/*.qml \
+            qml/pages/*.qml
+}
 
 SOURCES += \
     src/harbour-bodyweight-timer.cpp
@@ -38,10 +43,13 @@ OTHER_FILES += qml/*.qml \
     icons/108x108/apps/harbouy-bodyweight-timer.png \
     icons/128x128/apps/harbouy-bodyweight-timer.png \
     icons/256x256/apps/harbouy-bodyweight-timer.png \
+    translations/*.ts
 
 # to disable building translations every time, comment out the
 # following CONFIG line
-CONFIG += sailfishapp_i18n
+CONFIG += \
+    sailfishapp_i18n \
+    sailfishapp_i18n_idbased
 
 # German translation is enabled as an example. If you aren't
 # planning to localize your app, remember to comment out the
