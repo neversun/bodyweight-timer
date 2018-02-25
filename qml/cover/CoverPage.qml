@@ -180,7 +180,7 @@ CoverBackground {
 
         Label {
             id: coverTimeLabel
-            text: 'time'
+            text: qsTrId('time')
             visible: false
             color: Theme.secondaryColor
             font.pixelSize: Theme.fontSizeSmall
@@ -204,7 +204,7 @@ CoverBackground {
 
         Label {
             id: coverSetLabel
-            text: 'set'
+            text: qsTrId('set')
             visible: false
             color: Theme.secondaryColor
             font.pixelSize: Theme.fontSizeSmall
@@ -238,7 +238,7 @@ CoverBackground {
 
         Label {
             id: coverExerciseLabel
-            text: 'exercise'
+            text: qsTrId('exercise')
             visible: false
             color: Theme.secondaryColor
             font.pixelSize: Theme.fontSizeSmall

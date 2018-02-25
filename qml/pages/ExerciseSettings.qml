@@ -7,107 +7,66 @@ Page {
     property variant    page
     property variant    title
 
-    property variant    value1ReturnFromDB
-    property variant    value2ReturnFromDB
-    property variant    value3ReturnFromDB
-    property variant    value4ReturnFromDB
-    property variant    value1DescFromDB
-    property variant    value2DescFromDB
-    property variant    value3DescFromDB
-    property variant    value4DescFromDB
-    property string     value1Desc
-    property string     value2Desc
-    property string     value3Desc
-    property string     value4Desc
-    property int        value1
-    property int        value2
-    property int        value3
-    property int        value4
-    property bool       value2Display
-    property bool       value1Display
-    property bool       value3Display
-    property bool       value4Display
-    property bool       value1IsTime
-    property bool       value2IsTime
-    property bool       value3IsTime
-    property bool       value4IsTime
-    property string     explanation
-
     function capitaliseFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
-
-    // TODO: refactor this block. doesnt look good to me
-    Component.onCompleted: {
-        settingsPage.value1ReturnFromDB =     DB.getDatabaseValuesFor(page,"value1")
-        settingsPage.value2ReturnFromDB =     DB.getDatabaseValuesFor(page,"value2")
-        settingsPage.value3ReturnFromDB =     DB.getDatabaseValuesFor(page,"value3")
-        settingsPage.value4ReturnFromDB =     DB.getDatabaseValuesFor(page,"value4")
-        settingsPage.value1DescFromDB =       DB.getDatabaseValuesFor(page,"value1Desc")
-        settingsPage.value2DescFromDB =       DB.getDatabaseValuesFor(page,"value2Desc")
-        settingsPage.value3DescFromDB =       DB.getDatabaseValuesFor(page,"value3Desc")
-        settingsPage.value4DescFromDB =       DB.getDatabaseValuesFor(page,"value4Desc")
-        settingsPage.explanation =            DB.getDatabaseValuesFor(page,"explanation")[0]
-
-        onValue1ReturnFromDbchanged: {
-            settingsPage.value1 =                 value1ReturnFromDB[0]
-            settingsPage.value1Display =          value1ReturnFromDB[1]
-        }
-
-        onValue2ReturnFromDbchanged: {
-            settingsPage.value2 =                 value2ReturnFromDB[0]
-            settingsPage.value2Display =          value2ReturnFromDB[1]
-        }
-
-        onValue3ReturnFromDbchanged: {
-            settingsPage.value3 =                 value3ReturnFromDB[0]
-            settingsPage.value3Display =          value3ReturnFromDB[1]
-        }
-
-        onValue4ReturnFromDbchanged: {
-            settingsPage.value4 =                 value4ReturnFromDB[0]
-            settingsPage.value4Display =          value4ReturnFromDB[1]
-        }
-
-        onValue1DescFromDBchanged: {
-            settingsPage.value1Desc =            value1DescFromDB[0]
-            settingsPage.value1IsTime =          value1DescFromDB[2]
-        }
-
-        onValue2DescFromDBchanged: {
-            settingsPage.value2Desc =            value2DescFromDB[0]
-            settingsPage.value2IsTime =          value2DescFromDB[2]
-        }
-
-        onValue3DescFromDBchanged: {
-            settingsPage.value3Desc =            value3DescFromDB[0]
-            settingsPage.value3IsTime =          value3DescFromDB[2]
-        }
-
-        onValue4DescFromDBchanged: {
-            settingsPage.value4Desc =            value4DescFromDB[0]
-            settingsPage.value4IsTime =          value4DescFromDB[2]
-        }
-
-        if (value1Display) {if(value1IsTime) {settingButtonModel.append({"value": value1, "valueDesc": value1Desc,"valueName":"value1"});} else {settingSliderModel.append({"value":value1, "valueDesc":value1Desc,"valueName":"value1"});}};
-        if (value2Display) {if(value2IsTime) {settingButtonModel.append({"value": value2, "valueDesc": value2Desc,"valueName":"value2"});} else {settingSliderModel.append({"value":value2, "valueDesc":value2Desc,"valueName":"value2"});}};
-        if (value3Display) {if(value3IsTime) {settingButtonModel.append({"value": value3, "valueDesc": value3Desc,"valueName":"value3"});} else {settingSliderModel.append({"value":value3, "valueDesc":value3Desc,"valueName":"value3"});}};
-        if (value4Display) {if(value4IsTime) {settingButtonModel.append({"value": value4, "valueDesc": value4Desc,"valueName":"value4"});} else {settingSliderModel.append({"value":value4, "valueDesc":value4Desc,"valueName":"value4"});}};
-
-
-        appWindow.timerRunning = false
-        appWindow.exerciseActive = false
-        appWindow.timerStartedOnce = false
-    }
-
-
-
+    
     ListModel {
         id: settingButtonModel
     }
 
     ListModel {
         id: settingSliderModel
+    }
+
+    Component.onCompleted: {
+        appWindow.timerRunning = false
+        appWindow.exerciseActive = false
+        appWindow.timerStartedOnce = false
+        
+        var exerciseValueDescriptions = {
+            CircleInterval: {
+                value1: qsTrId("duration")
+            },
+            IntervalSet: {
+                value1: qsTrId("duration-per-set"),
+                value2: qsTrId("sets-per-exercise"),
+                value3: qsTrId("number-exercises")
+            },
+            SuperSet: {
+                value1: qsTrId("duration-per-set"),
+                value2: qsTrId("sets-per-exercise"),
+                value3: qsTrId("number-exercises")
+            },
+            Ladder: {
+                value1: qsTrId("duration-per-exercise"),
+                value2: qsTrId("number-exercises")
+            },
+            Tabata: {
+                value1: qsTrId("rounds-per-exercise"),
+                value2: qsTrId("duration-of-active-time"),
+                value3: qsTrId("duration-of-pause"),
+                value4: qsTrId("number-exercises")
+            }
+        }
+
+        DB.getDatabaseValuesFor(page, function (columnValues) {
+            var keys = Object.keys(columnValues)
+            for (var i = 0; i < keys.length; i++) {
+                var value = columnValues[keys[i]]
+                var modelEntry = {
+                    value: value.value,
+                    valueDesc: exerciseValueDescriptions[page][value.name],
+                    valueName: value.name
+                }
+
+                if (value.isTime) {
+                    settingButtonModel.append(modelEntry)
+                } else {
+                    settingSliderModel.append(modelEntry)
+                }
+            }
+       })
     }
 
     SilicaFlickable {
@@ -121,7 +80,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 id: menuOne
-                text: "Reset to default"
+                text: qsTrId("reset-to-default")
                 onClicked: {
                     DB.defaultDatabaseValuesFor(page)
                     pageStack.replace(Qt.resolvedUrl("ExerciseSettings.qml"),{ page:page,title:title }, false )
@@ -131,10 +90,10 @@ Page {
 
         PageHeader {
             id: header
-            title: "Settings: "+settingsPage.title.toString()
+            //% "Settings: %1"
+            title: qsTrId("settings-for").arg(settingsPage.title.toString())
         }
 
-        //Display the explanation
         TextArea {
             id: explanation
             height: text.height
@@ -143,9 +102,26 @@ Page {
             anchors.horizontalCenter: parent.horizontalCenter
             width: parent.width
             readOnly: true
-            text: settingsPage.explanation
+            text: {
+                if (page === 'CircleInterval') {
+                    //% "Do as much as you can for the duration of the exercise.\n\nReduce pauses to a minimum.\n\nTripple bell = end"
+                    return qsTrId('instruction-circleinterval')
+                } else if (page === 'SuperSet') {
+                    //% "In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \nFirst pair-exercise should not cause you musle malfunction.\n\nSingle bell = next set\nDouble bell = next exercise pair\nTripple bell = end"
+                    return qsTrId('instruction-superset')
+                } else if (page === 'IntervalSet') {
+                    //% "In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.\n\nSingle bell = next set\nDouble bell = next exercise\nTripple bell = end"
+                    return qsTrId('instruction-intervalset')
+                } else if (page === 'Ladder') {
+                    //% "Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\nOn muscle malfunction reduce the repetitions by 1, then by another and so forth.\n\nAlready at 1 repetition again and time is not over? Start a new ladder!\n\nSingle bell = next exercise\nTripple bell = end"
+                    return qsTrId('instruction-ladder')
+                } else if (page === 'Tabata') {
+                    //% "During active time (green) move on. During pause time (red) pause.\n\nTry to find your ideal tempo (consistent repetitions).\n\nSingle bell = active time begins\nDouble bell = pause time begins\nTripple bell = next exercise or end."
+                    return qsTrId('instruction-tabata')
+                }
+            }
             wrapMode: TextEdit.WordWrap
-            label: "explanation"
+            label: qsTrId("instruction")
         }
 
         //Display all possible buttons
@@ -174,7 +150,11 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 height: Theme.itemSizeMedium
                 color: Theme.primaryColor
-                text: { model.valueDesc+": "+selectedMinute+"m "+selectedSecond+"s" }
+                text: { 
+                    //% "%1m %2s"
+                    //: m = minute, s = second
+                    model.valueDesc+": " + qsTrId('minutes-and-seconds').arg(selectedMinute).arg(selectedSecond)
+                }
                 onClicked: openTimeDialog()
             }
         }

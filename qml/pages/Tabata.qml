@@ -11,27 +11,16 @@ Page{
     property variant    page
     property variant    title
 
-    // parameters from DB
-    property variant    value1ReturnFromDB
-    property variant    value2ReturnFromDB
-    property variant    value3ReturnFromDB
-    property variant    value4ReturnFromDB
-    property int        value1
-    property int        value2
-    property int        value3
-    property int        value4
-
     onStatusChanged: {
-        if(status === PageStatus.Activating)
-        {
-            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
-            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
-            value2ReturnFromDB = DB.getDatabaseValuesFor(page,"value2")
-            onValue2ReturnFromDBchanged: value2 = value2ReturnFromDB[0]
-            value3ReturnFromDB = DB.getDatabaseValuesFor(page,"value3")
-            onValue3ReturnFromDBchanged: value3 = value3ReturnFromDB[0]
-            value4ReturnFromDB = DB.getDatabaseValuesFor(page,"value4")
-            onValue4ReturnFromDBchanged: value4 = value4ReturnFromDB[0]
+        if(status === PageStatus.Activating) {
+            DB.getDatabaseValuesFor(page, function (columValues) {
+                exercisePage.roundsPerExercise = columValues.value1.value
+                exercisePage.activeTimeDuration = columValues.value2.value
+                exercisePage.pauseTimeDuration = columValues.value3.value
+                exercisePage.numberOfExercises = columValues.value3.value
+                appWindow.exerciseActive = true
+                appWindow.exerciseActiveName = title
+            })
 
             appWindow.exerciseActive = true
             appWindow.exerciseActiveName = title
@@ -41,22 +30,18 @@ Page{
     //##    page internal properties
     // duration of active time
     property int remainingActiveTime
-    property int activeTimeDuration:value2
+    property int activeTimeDuration
 
     onActiveTimeDurationChanged: resetRemainingActiveTime()
 
-    //duration of pause
     property int remainingPauseTime
-    property int pauseTimeDuration:value3
+    property int pauseTimeDuration
 
     onPauseTimeDurationChanged: resetRemainingPauseTime()
 
-    //rounds per exercise
-    property int roundsPerExercise:value1
-
-    //number of exercises
+    property int roundsPerExercise
     property int currentExercise
-    property int numberOfExercises: value4
+    property int numberOfExercises
 
     onNumberOfExercisesChanged: {
         resetCurrentExercise();
@@ -119,7 +104,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: "Settings"
+                text: qsTrId("settings")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title});
                     resetTimerWithActivePauseExerciseSum();
@@ -155,7 +140,9 @@ Page{
             text: {
                 var displayMinutes = Math.floor(remainingSumAllDurations/60);
                 var displaySeconds = remainingSumAllDurations-(displayMinutes*60)
-                displayMinutes+"m "+displaySeconds+"s"
+                //% "%1m %2s"
+                //: m = minute, s = second
+                qsTrId("minutes-and-seconds").arg(displayMinutes).arg(displaySeconds)
             }
             font.pixelSize: Theme.fontSizeHuge
         }
@@ -241,9 +228,11 @@ Page{
             font.pixelSize: Theme.fontSizeMedium
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
-                    "current exercise: " + currentExercise + " of " + numberOfExercises
+                    //% "current exercise: %1 of %2"
+                    qsTrId("current-exercise").arg(currentExercise).arg(numberOfExercises)
+                } else {
+                    return ''
                 }
-                else { "Number of exercises: " + numberOfExercises}
             }
         }
 
@@ -256,14 +245,14 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                    "Pause"
+                   qsTrId("pause")
                 }
                 else {
                     if(appWindow.timerStartedOnce) {
-                        "Resume"
+                        qsTrId("resume")
                     }
                     else {
-                        "Start"
+                        qsTrId("start")
                     }
                 }
             }

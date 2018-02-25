@@ -11,26 +11,21 @@ Page{
     property variant    page
     property variant    title
 
-    //  parameters from DB
-    property variant    value1ReturnFromDB;
-    property int           value1;
-
     // initialize page properties once page is fully loaded
     onStatusChanged: {
-        if(status === PageStatus.Activating)
-        {
-            value1ReturnFromDB = DB.getDatabaseValuesFor(page,"value1")
-            onValue1ReturnFromDBchanged: value1 = value1ReturnFromDB[0]
-
-            appWindow.exerciseActive = true
-            appWindow.exerciseActiveName = title
+        if(status === PageStatus.Activating) {
+            DB.getDatabaseValuesFor(page, function (columValues) {
+                exercisePage.timePerSet = columValues.value1.value
+                appWindow.exerciseActive = true
+                appWindow.exerciseActiveName = title
+            })
         }
     }
 
     //##    page internal properties
     // current time
     property int currentTime
-    property int timePerSet:value1
+    property int timePerSet
 
     onTimePerSetChanged: {
         AppFunctions.resetCurrentTime();
@@ -55,7 +50,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: "Settings"
+                text: qsTrId('settings')
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title})
                     AppFunctions.resetTimerWithTimeSet();
@@ -90,9 +85,11 @@ Page{
             anchors.verticalCenter: parent.verticalCenter
             anchors.verticalCenterOffset : -(Theme.itemSizeMedium)
             text: {
-                var displayMinutes = Math.floor(currentTime/60);
+                var displayMinutes = Math.floor(currentTime/60)
                 var displaySeconds = currentTime-(displayMinutes*60)
-                displayMinutes+"m "+displaySeconds+"s"
+                //% "%1m %2s"
+                //: m = minute, s = second
+                qsTrId("minutes-and-seconds").arg(displayMinutes).arg(displaySeconds)
             }
             font.pixelSize: Theme.fontSizeHuge
         }
@@ -138,14 +135,13 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                    "Pause"
-                }
-                else {
+                    qsTrId("pause")
+                } else {
                     if(appWindow.timerStartedOnce) {
-                        "Resume"
+                        qsTrId("resume")
                     }
                     else {
-                        "Start"
+                        qsTrId("start")
                     }
                 }
             }
