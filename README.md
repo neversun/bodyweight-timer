@@ -1,3 +1,7 @@
+<a href="https://hosted.weblate.org/engage/bodyweight-timer-sailfish-os/?utm_source=widget">
+<img src="https://hosted.weblate.org/widgets/bodyweight-timer-sailfish-os/-/svg-badge.svg" alt="Translation status" />
+</a>
+
 ![](https://raw.githubusercontent.com/neversun/bodyweight-timer/master/harbour-bodyweight-timer.png) Bodyweight timer for Sailfish OS
 =============================
 
