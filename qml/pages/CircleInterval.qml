@@ -50,7 +50,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: qsTrId('settings')
+                text: qsTr('settings')
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title})
                     AppFunctions.resetTimerWithTimeSet();
@@ -87,9 +87,8 @@ Page{
             text: {
                 var displayMinutes = Math.floor(currentTime/60)
                 var displaySeconds = currentTime-(displayMinutes*60)
-                //% "%1m %2s"
                 //: m = minute, s = second
-                qsTrId("minutes-and-seconds").arg(displayMinutes).arg(displaySeconds)
+                qsTr("%1m %2s").arg(displayMinutes).arg(displaySeconds)
             }
             font.pixelSize: Theme.fontSizeHuge
         }
@@ -135,13 +134,13 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                    qsTrId("pause")
+                    qsTr("pause")
                 } else {
                     if(appWindow.timerStartedOnce) {
-                        qsTrId("resume")
+                        qsTr("resume")
                     }
                     else {
-                        qsTrId("start")
+                        qsTr("start")
                     }
                 }
             }

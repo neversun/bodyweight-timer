@@ -64,7 +64,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: qsTrId("settings")
+                text: qsTr("settings")
                 onClicked: pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title})
             }
         }
@@ -98,9 +98,8 @@ Page{
             text: {
                 var displayMinutes = Math.floor(currentTime/60);
                 var displaySeconds = currentTime-(displayMinutes*60)
-                //% "%1m %2s"
                 //: m = minute, s = second
-                qsTrId("minutes-and-seconds").arg(displayMinutes).arg(displaySeconds)
+                qsTr("%1m %2s").arg(displayMinutes).arg(displaySeconds)
             }
         }
 
@@ -163,16 +162,13 @@ Page{
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
                    if(currentSet <= setsPerExercise) {
-                       //% "current set: %1 of %2"
-                       qsTrId("current-set").arg(currentSet).arg(setsPerExercise)
+                       qsTr("current set: %1 of %2").arg(currentSet).arg(setsPerExercise)
                    }
                    else {
-                       //% "current set: %1 of %2"
-                       qsTrId("current-set").arg(setsPerExercise).arg(setsPerExercise)
+                       qsTr("current set: %1 of %2").arg(setsPerExercise).arg(setsPerExercise)
                    }
                 } else {
-                   //% "Sets for each exercise: %1"
-                   qsTrId("sets-per-exercise--with-number").arg(setsPerExercise)
+                   qsTr("sets for each exercise: %1").arg(setsPerExercise)
                }
             }
         }
@@ -184,11 +180,9 @@ Page{
             font.pixelSize: Theme.fontSizeMedium
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
-                    //% "current exercise: %1 of %2"
-                    qsTrId("current-exercise").arg(currentRound).arg(roundsPerExercise)                }
+                    qsTr("current exercise: %1 of %2").arg(currentRound).arg(roundsPerExercise)                }
                 else { 
-                    //% "Number of exercises: %1"
-                    qsTrId("number-exercises--with-number").arg(roundsPerExercise)
+                    qsTr("number of exercises: %1").arg(roundsPerExercise)
                 }
             }
         }
@@ -201,14 +195,14 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                   qsTrId("pause")
+                   qsTr("pause")
                 }
                 else {
                     if(appWindow.timerStartedOnce) {
-                        qsTrId("resume")
+                        qsTr("resume")
                     }
                     else {
-                        qsTrId("start")
+                        qsTr("start")
                     }
                 }
             }

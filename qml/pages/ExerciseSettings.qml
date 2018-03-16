@@ -26,27 +26,27 @@ Page {
         
         var exerciseValueDescriptions = {
             CircleInterval: {
-                value1: qsTrId("duration")
+                value1: qsTr("duration")
             },
             IntervalSet: {
-                value1: qsTrId("duration-per-set"),
-                value2: qsTrId("sets-per-exercise"),
-                value3: qsTrId("number-exercises")
+                value1: qsTr("duration per set"),
+                value2: qsTr("sets per exercise"),
+                value3: qsTr("number exercises")
             },
             SuperSet: {
-                value1: qsTrId("duration-per-set"),
-                value2: qsTrId("sets-per-exercise"),
-                value3: qsTrId("number-exercises")
+                value1: qsTr("duration per set"),
+                value2: qsTr("sets per exercise"),
+                value3: qsTr("number exercises")
             },
             Ladder: {
-                value1: qsTrId("duration-per-exercise"),
-                value2: qsTrId("number-exercises")
+                value1: qsTr("duration per exercise"),
+                value2: qsTr("number exercises")
             },
             Tabata: {
-                value1: qsTrId("rounds-per-exercise"),
-                value2: qsTrId("duration-of-active-time"),
-                value3: qsTrId("duration-of-pause"),
-                value4: qsTrId("number-exercises")
+                value1: qsTr("rounds per exercise"),
+                value2: qsTr("duration of active time"),
+                value3: qsTr("duration of pause"),
+                value4: qsTr("number exercises")
             }
         }
 
@@ -80,7 +80,7 @@ Page {
         PullDownMenu {
             MenuItem {
                 id: menuOne
-                text: qsTrId("reset-to-default")
+                text: qsTr("reset to default")
                 onClicked: {
                     DB.defaultDatabaseValuesFor(page)
                     pageStack.replace(Qt.resolvedUrl("ExerciseSettings.qml"),{ page:page,title:title }, false )
@@ -90,8 +90,7 @@ Page {
 
         PageHeader {
             id: header
-            //% "Settings: %1"
-            title: qsTrId("settings-for").arg(settingsPage.title.toString())
+            title: qsTr("settings: %1").arg(settingsPage.title.toString())
         }
 
         TextArea {
@@ -104,24 +103,19 @@ Page {
             readOnly: true
             text: {
                 if (page === 'CircleInterval') {
-                    //% "Do as much as you can for the duration of the exercise.\n\nReduce pauses to a minimum.\n\nTripple bell = end"
-                    return qsTrId('instruction-circleinterval')
+                    return qsTr('Do as much as you can for the duration of the exercise.\n\nReduce pauses to a minimum.\n\nTripple bell = end"')
                 } else if (page === 'SuperSet') {
-                    //% "In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \nFirst pair-exercise should not cause you musle malfunction.\n\nSingle bell = next set\nDouble bell = next exercise pair\nTripple bell = end"
-                    return qsTrId('instruction-superset')
+                    return qsTr('In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \nFirst pair-exercise should not cause you musle malfunction.\n\nSingle bell = next set\nDouble bell = next exercise pair\nTripple bell = end')
                 } else if (page === 'IntervalSet') {
-                    //% "In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.\n\nSingle bell = next set\nDouble bell = next exercise\nTripple bell = end"
-                    return qsTrId('instruction-intervalset')
+                    return qsTr('In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.\n\nSingle bell = next set\nDouble bell = next exercise\nTripple bell = end')
                 } else if (page === 'Ladder') {
-                    //% "Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\nOn muscle malfunction reduce the repetitions by 1, then by another and so forth.\n\nAlready at 1 repetition again and time is not over? Start a new ladder!\n\nSingle bell = next exercise\nTripple bell = end"
-                    return qsTrId('instruction-ladder')
+                    return qsTr('Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\nOn muscle malfunction reduce the repetitions by 1, then by another and so forth.\n\nAlready at 1 repetition again and time is not over? Start a new ladder!\n\nSingle bell = next exercise\nTripple bell = end')
                 } else if (page === 'Tabata') {
-                    //% "During active time (green) move on. During pause time (red) pause.\n\nTry to find your ideal tempo (consistent repetitions).\n\nSingle bell = active time begins\nDouble bell = pause time begins\nTripple bell = next exercise or end"
-                    return qsTrId('instruction-tabata')
+                    return qsTr('During active time (green) move on. During pause time (red) pause.\n\nTry to find your ideal tempo (consistent repetitions).\n\nSingle bell = active time begins\nDouble bell = pause time begins\nTripple bell = next exercise or end.')
                 }
             }
             wrapMode: TextEdit.WordWrap
-            label: qsTrId("instruction")
+            label: qsTr("instruction")
         }
 
         //Display all possible buttons
@@ -151,9 +145,8 @@ Page {
                 height: Theme.itemSizeMedium
                 color: Theme.primaryColor
                 text: { 
-                    //% "%1m %2s"
                     //: m = minute, s = second
-                    model.valueDesc+": " + qsTrId('minutes-and-seconds').arg(selectedMinute).arg(selectedSecond)
+                    model.valueDesc+": " + qsTr("%1m %2s").arg(selectedMinute).arg(selectedSecond)
                 }
                 onClicked: openTimeDialog()
             }

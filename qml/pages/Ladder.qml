@@ -49,7 +49,7 @@ Page{
 
         PullDownMenu {
             MenuItem {
-                text: qsTrId("settings")
+                text: qsTr("settings")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("ExerciseSettings.qml"), {page: page, title: title});
                     AppFunctions.resetTimerWithTimeRound();
@@ -85,9 +85,8 @@ Page{
             text: {
                 var displayMinutes = Math.floor(currentTime/60);
                 var displaySeconds = currentTime-(displayMinutes*60)
-                //% "%1m %2s"
                 //: m = minute, s = second
-                qsTrId('minutes-and-seconds').arg(displayMinutes).arg(displaySeconds)
+                qsTr('%1m %2s').arg(displayMinutes).arg(displaySeconds)
             }
             font.pixelSize: Theme.fontSizeHuge
         }
@@ -145,12 +144,10 @@ Page{
             text: {
                 if(progressCircleTimer.running || appWindow.timerStartedOnce) {
                     if(currentRound <= roundsPerExercise) {
-                        //% "current exercise: %1 of %2"
-                        qsTrId("current-exercise").arg(currentRound).arg(roundsPerExercise)
+                        qsTr("current exercise: %1 of %2").arg(currentRound).arg(roundsPerExercise)
                     }
                     else {
-                        //% "current exercise: %1 of %2"
-                        qsTrId("current-exercise").arg(roundsPerExercise).arg(roundsPerExercise)
+                        qsTr("current exercise: %1 of %2").arg(roundsPerExercise).arg(roundsPerExercise)
                     }
                 } else {
                     return ''
@@ -165,14 +162,14 @@ Page{
             onClicked: AppFunctions.timerTogglePause()
             text: {
                 if(progressCircleTimer.running) {
-                   qsTrId("pause")
+                   qsTr("pause")
                 }
                 else {
                     if(appWindow.timerStartedOnce) {
-                        qsTrId("resume")
+                        qsTr("resume")
                     }
                     else {
-                        qsTrId("start")
+                        qsTr("start")
                     }
                 }
             }
