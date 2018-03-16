@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1">
+<TS version="2.1" language="de">
 <context>
     <name>About</name>
     <message>
         <location filename="../qml/pages/About.qml" line="21"/>
         <source>about</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="30"/>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>made by %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Made by %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="35"/>
         <source>source code</source>
-        <translation type="unfinished"></translation>
+        <translation>Source Code</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="49"/>
         <source>icon</source>
-        <translation type="unfinished"></translation>
+        <translation>Icon</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="63"/>
         <source>credits</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachweise</translation>
     </message>
 </context>
 <context>
@@ -35,28 +35,28 @@
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="53"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="91"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1m %2s</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="137"/>
         <source>pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="140"/>
         <source>resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="143"/>
         <source>start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
 </context>
 <context>
@@ -64,17 +64,17 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="183"/>
         <source>time</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeit</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="207"/>
         <source>set</source>
-        <translation type="unfinished"></translation>
+        <translation>Satz</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="241"/>
         <source>exercise</source>
-        <translation type="unfinished"></translation>
+        <translation>Übung</translation>
     </message>
 </context>
 <context>
@@ -82,19 +82,19 @@
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="29"/>
         <source>duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="32"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="37"/>
         <source>duration per set</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer pro Satz</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="33"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="38"/>
         <source>sets per exercise</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätze pro Übung</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="34"/>
@@ -102,37 +102,37 @@
         <location filename="../qml/pages/ExerciseSettings.qml" line="43"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="49"/>
         <source>number exercises</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl Übungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="42"/>
         <source>duration per exercise</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer pro Übung</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="46"/>
         <source>rounds per exercise</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätze pro Übung</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="47"/>
         <source>duration of active time</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer der aktiven Zeit</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="48"/>
         <source>duration of pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauer der Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="83"/>
         <source>reset to default</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurücksetzen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="93"/>
         <source>settings: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="106"/>
@@ -141,7 +141,11 @@
 Reduce pauses to a minimum.
 
 Tripple bell = end&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation>Mache in der gesamten Dauer so viele Übungen wie möglich.
+
+Reduziere Pausen auf ein Minimum.
+
+3x Glockenschlag = Ende</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="108"/>
@@ -152,7 +156,12 @@ First pair-exercise should not cause you musle malfunction.
 Single bell = next set
 Double bell = next exercise pair
 Tripple bell = end</source>
-        <translation type="unfinished"></translation>
+        <translation>Jeder 4 minütige Satz besteht aus 2 Übungen.
+Mache bei den Wiederholungen 1 bis 5 die Übung 1, bei den Wiederholungen 6 bis 12 die Übung 2.
+
+1x Glockenschlag = Nächster Satz
+2x Glockenschlag = Nächstes Übungspaar
+3x Glockenschlag = Ende</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="110"/>
@@ -163,7 +172,12 @@ Tripple bell = end</source>
 Single bell = next set
 Double bell = next exercise
 Tripple bell = end</source>
-        <translation type="unfinished"></translation>
+        <translation>Mache in jedem 3 minütigem Satz 6 bis 12 Wiederholungen. Pausiere den Rest des Satzes bei Muskelversagen.
+Einer der drei Sätze sollte zu Muskelversagen führen. Mache eine andere/anstregendere Übung wenn nicht.
+
+1x Glockenschlag = Nächster Satz
+2x Glockenschlag = Nächste Übung
+3x Glockenschlag = Ende</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="112"/>
@@ -174,7 +188,13 @@ Already at 1 repetition again and time is not over? Start a new ladder!
 
 Single bell = next exercise
 Tripple bell = end</source>
-        <translation type="unfinished"></translation>
+        <translation>Mache 1 Wiederholung einer Übung und pausiere die Zeit, die du dafür benötigt hast. Dann mache 2 Wiederholungen und pausiere die Zeit, die du für die 2 benötigt hast. Mache so innerhalb eines Satzes immer weiter.
+Bei Muskelversagen reduzierst du die Anzahl der Übungen um 1, bis du wieder bei 1 Wiederholung bist.
+
+Zeit nicht vorbei, aber schon wieder bei 1 Wiederholung? Starte mit einem neuen Stufenintervall!
+
+1x Glockenschlag = Nächste Übung
+3x Glockenschlag = Ende</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="114"/>
@@ -185,18 +205,23 @@ Try to find your ideal tempo (consistent repetitions).
 Single bell = active time begins
 Double bell = pause time begins
 Tripple bell = next exercise or end.</source>
-        <translation type="unfinished"></translation>
+        <translation>Führe die Übung Während der aktiven Zeit (grün) aus. Pausiere in der Pausenzeit (rot).
+Versuche dein ideales Tempo zu finden (gleichmäßige Anzahl an Wiederholungen).
+
+1x Glockenschlag = Beginn Aktive Zeit
+2x Glockenschlag = Beginn Pausenzeit
+3x Glockenschlag = Nächste Übung oder Ende.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
         <source>instruction</source>
-        <translation type="unfinished"></translation>
+        <translation>Anleitung</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="149"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1m %2s</translation>
     </message>
 </context>
 <context>
@@ -204,37 +229,37 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Home.qml" line="32"/>
         <source>about</source>
-        <translation type="unfinished"></translation>
+        <translation>Über</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="40"/>
         <source>workouts</source>
-        <translation type="unfinished"></translation>
+        <translation>Übungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="48"/>
         <source>circle interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Zirkelintervall</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="52"/>
         <source>interval set</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervallsatz</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="60"/>
         <source>super set</source>
-        <translation type="unfinished"></translation>
+        <translation>Supersatz</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="56"/>
         <source>ladder</source>
-        <translation type="unfinished"></translation>
+        <translation>Stufenintervall</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="64"/>
         <source>tabata</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabata</translation>
     </message>
 </context>
 <context>
@@ -242,44 +267,44 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="67"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="105"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1m %2s</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="168"/>
         <location filename="../qml/pages/IntervalSet.qml" line="171"/>
         <source>current set: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Satz %1 von %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="174"/>
         <source>sets for each exercise: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätze pro Übung: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="186"/>
         <source>current exercise: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Übung: %1 von %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="201"/>
         <source>pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="205"/>
         <source>resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="208"/>
         <source>start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
 </context>
 <context>
@@ -287,34 +312,34 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="52"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="89"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1m %2s</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="147"/>
         <location filename="../qml/pages/Ladder.qml" line="150"/>
         <source>current exercise: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Übung: %1 von %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="165"/>
         <source>pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="169"/>
         <source>resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="172"/>
         <source>start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
 </context>
 <context>
@@ -322,49 +347,49 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="67"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="102"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1m %2s</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="165"/>
         <location filename="../qml/pages/SuperSet.qml" line="168"/>
         <source>current set: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Satz: %1 von %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="171"/>
         <source>sets for each exercise: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sätze pro Übung: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="183"/>
         <source>current exercise: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Übung: %1 von %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="185"/>
         <source>number of exercises: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Übungen: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="198"/>
         <source>pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="202"/>
         <source>resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="205"/>
         <source>start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
 </context>
 <context>
@@ -372,33 +397,33 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="107"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="144"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation type="unfinished"></translation>
+        <translation>%1m %2s</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="230"/>
         <source>current exercise: %1 of %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuelle Übung: %1 von %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="246"/>
         <source>pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="250"/>
         <source>resume</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiter</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="253"/>
         <source>start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
 </context>
 </TS>
