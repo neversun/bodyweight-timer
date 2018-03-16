@@ -103,15 +103,43 @@ Page {
             readOnly: true
             text: {
                 if (page === 'CircleInterval') {
-                    return qsTr('Do as much as you can for the duration of the exercise.\n\nReduce pauses to a minimum.\n\nTripple bell = end"')
+                    return qsTr('Do as much as you can for the duration of the exercise.\
+\
+Reduce pauses to a minimum.\
+\
+Tripple bell = end"')
                 } else if (page === 'SuperSet') {
-                    return qsTr('In a 4 minute set do the first superset (a pair of 2 exercises).\nDo at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \nFirst pair-exercise should not cause you musle malfunction.\n\nSingle bell = next set\nDouble bell = next exercise pair\nTripple bell = end')
+                    return qsTr('In a 4 minute set do the first superset (a pair of 2 exercises).\
+Do at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. \
+First pair-exercise should not cause you musle malfunction.\
+\
+Single bell = next set\
+Double bell = next exercise pair\
+Tripple bell = end')
                 } else if (page === 'IntervalSet') {
-                    return qsTr('In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\n\n1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.\n\nSingle bell = next set\nDouble bell = next exercise\nTripple bell = end')
+                    return qsTr('In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.\
+\
+1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.\
+\
+Single bell = next set\
+Double bell = next exercise\
+Tripple bell = end')
                 } else if (page === 'Ladder') {
-                    return qsTr('Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\nOn muscle malfunction reduce the repetitions by 1, then by another and so forth.\n\nAlready at 1 repetition again and time is not over? Start a new ladder!\n\nSingle bell = next exercise\nTripple bell = end')
+                    return qsTr('Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.\
+On muscle malfunction reduce the repetitions by 1, then by another and so forth.\
+\
+Already at 1 repetition again and time is not over? Start a new ladder!\
+\
+Single bell = next exercise\
+Tripple bell = end')
                 } else if (page === 'Tabata') {
-                    return qsTr('During active time (green) move on. During pause time (red) pause.\n\nTry to find your ideal tempo (consistent repetitions).\n\nSingle bell = active time begins\nDouble bell = pause time begins\nTripple bell = next exercise or end.')
+                    return qsTr('During active time (green) move on. During pause time (red) pause.\
+\
+Try to find your ideal tempo (consistent repetitions).\
+\
+Single bell = active time begins\
+Double bell = pause time begins\
+Tripple bell = next exercise or end.')
                 }
             }
             wrapMode: TextEdit.WordWrap
