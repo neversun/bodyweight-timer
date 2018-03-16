@@ -141,7 +141,11 @@
 Reduce pauses to a minimum.
 
 Tripple bell = end&quot;</source>
-        <translation></translation>
+        <translation>Faites de votre mieux pendant toute la durée de l&apos;exercice.
+
+Évitez les pauses au maximum.
+
+Triple son de cloche = fin.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="108"/>
@@ -152,7 +156,13 @@ First pair-exercise should not cause you musle malfunction.
 Single bell = next set
 Double bell = next exercise pair
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Menez à bien votre premier superset (paire de 2 exercices différents) dans une série de 4 minutes.
+Répétez 1 à 5 fois le premier exercice, 6 à 12 fois le second. 
+Le premier exercice ne devrait pas causer de douleur.
+
+Son de cloche = série suivante
+Double son de cloche = superset suivant
+Triple son de cloche = fin.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="110"/>
@@ -163,7 +173,13 @@ Tripple bell = end</source>
 Single bell = next set
 Double bell = next exercise
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Répétez votre exercice 6 à 12 fois dans une série de 3 minutes (arrêtez en cas de douleur) puis reposez-vous jusqu&apos;à la fin du décompte.
+
+Dans tous les cas, l&apos;une des 3 séries devrait vous faire ressentir une douleur ; pensez à un exercice plus exigeant si cela n&apos;était pas le cas.
+
+Son de cloche = série suivante
+Double son de cloche = exercice suivant
+Triple son de cloche = fin</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="112"/>
@@ -174,7 +190,13 @@ Already at 1 repetition again and time is not over? Start a new ladder!
 
 Single bell = next exercise
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Entamez une 1ère répétition de l&apos;exercice puis reposez-vous le même nombre de secondes qu&apos;il vous a pris pour la faire. Ensuite, effectuez 2 répétitions du même exercice et reposez-vous, toujours selon le temps dépensé. Ainsi de suite, le plus loin possible, jusqu&apos;aux premières douleurs.
+Dès qu&apos;elles se font ressentir, abaissez le nombre de répétitions une par une, jusqu&apos;à revenir au point de départ.
+
+Le temps n&apos;est toujours pas écoulé ? Recommencez un nouveau ladder et tentez d&apos;aller encore plus loin !
+
+Son de cloche = exercice suivant
+Triple son de cloche = fin</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="114"/>
@@ -185,7 +207,13 @@ Try to find your ideal tempo (consistent repetitions).
 Single bell = active time begins
 Double bell = pause time begins
 Tripple bell = next exercise or end.</source>
-        <translation></translation>
+        <translation>Travaillez les exercices lorsque le temps est au vert. Arrêtez-vous lorsque le temps passe au rouge.
+
+Essayez de trouver votre tempo idéal (répétitions constantes et régulières)!
+
+Son de cloche = le temps passe au vert
+Double son de cloche = le temps passe au rouge
+Triple son de cloche = exercice suivant ou fin.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
