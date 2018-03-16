@@ -29,7 +29,7 @@ Page {
 
         PullDownMenu {
             MenuItem {
-                text: qsTrId("about")
+                text: qsTr("about")
                 onClicked: pageStack.push(Qt.resolvedUrl("About.qml"))
             }
         }
@@ -37,7 +37,7 @@ Page {
         PageHeader {
             id: header
             title: {
-                qsTrId("workouts")
+                qsTr("workouts")
             }
         }
 
@@ -45,23 +45,23 @@ Page {
             id: homeModel
             ListElement {
                 page: "CircleInterval"
-                title: qsTrId("circle-interval")
+                title: qsTr("circle interval")
             }
             ListElement {
                 page: "IntervalSet"
-                title: qsTrId("interval-set")
+                title: qsTr("interval set")
             }
             ListElement {
                 page: "Ladder"
-                title: qsTrId("ladder")
+                title: qsTr("ladder")
             }
             ListElement {
                 page: "SuperSet"
-                title: qsTrId("super-set")
+                title: qsTr("super set")
             }
             ListElement {
                 page: "Tabata"
-                title: qsTrId("tabata")
+                title: qsTr("tabata")
             }
         }
 
