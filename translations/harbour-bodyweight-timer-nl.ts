@@ -12,7 +12,7 @@
         <location filename="../qml/pages/About.qml" line="30"/>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>made by %1</source>
-        <translation></translation>
+        <translation>Gemaakt door %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="35"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="241"/>
         <source>exercise</source>
-        <translation></translation>
+        <translation>oefening</translation>
     </message>
 </context>
 <context>
@@ -141,7 +141,11 @@
 Reduce pauses to a minimum.
 
 Tripple bell = end&quot;</source>
-        <translation></translation>
+        <translation>Doe zoveel je kan zolang de oefening duurt
+
+Beperk je pauzes tot een minimum.
+
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="108"/>
@@ -152,7 +156,13 @@ First pair-exercise should not cause you musle malfunction.
 Single bell = next set
 Double bell = next exercise pair
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Voer tijdens een set van 3 minuten 6 tot 12 herhalingen uit (stop bij spiermoeheid). Pauzeer de rest van de set.
+
+Één van de drie sets zou tot spiermoeheid moeten leiden. Probeer een moeilijkere of andere oefening als dat niet het geval is.
+
+Één bel = volgende set
+Dubbele bel = volgende oefening
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="110"/>
@@ -163,7 +173,13 @@ Tripple bell = end</source>
 Single bell = next set
 Double bell = next exercise
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Voer tijdens een set van 3 minuten 6 tot 12 herhalingen uit (stop bij spiermoeheid). Pauzeer de rest van de set.
+
+Één van de drie sets zou tot spiermoeheid moeten leiden. Probeer een moeilijkere of andere oefening als dat niet het geval is.
+
+Één bel = volgende set
+Dubbele bel = volgende oefening
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="112"/>
@@ -174,7 +190,13 @@ Already at 1 repetition again and time is not over? Start a new ladder!
 
 Single bell = next exercise
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Voer 1 herhaling van een oefening uit en pauzeer even lang als het duurde om de herhaling uit te voeren. Voer daarna 2 herhalingen uit, en pauzeer voor een duur van 2 herhalingen, enzovoort.
+Verminder het aantal herhalingen progressief met 1 bij spiermoeheid.
+
+Sta je weer op 1 herhaling en is de tijd nog niet op? Begin dan een nieuwe ladder!
+
+Één bel = volgende oefening
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="114"/>
@@ -185,7 +207,13 @@ Try to find your ideal tempo (consistent repetitions).
 Single bell = active time begins
 Double bell = pause time begins
 Tripple bell = next exercise or end.</source>
-        <translation></translation>
+        <translation>Doe voort tijdens de actieve tijd (groen). Pauzeer tijdens de pauze (rood).
+
+Probeer je ideale tempo te vinden (consistente herhalingen).
+
+Één bel = begin van actieve tijd
+Dubbele bel = begin van pauze
+Drievoudige bel = volgende oefening of einde.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
@@ -383,7 +411,7 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="230"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="246"/>
