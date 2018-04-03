@@ -6,28 +6,28 @@
     <message>
         <location filename="../qml/pages/About.qml" line="21"/>
         <source>about</source>
-        <translation></translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="30"/>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>made by %1</source>
-        <translation></translation>
+        <translation>Une création de %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="35"/>
         <source>source code</source>
-        <translation></translation>
+        <translation>Code source</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="49"/>
         <source>icon</source>
-        <translation></translation>
+        <translation>Icône de l&apos;appli</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="63"/>
         <source>credits</source>
-        <translation></translation>
+        <translation>Crédits</translation>
     </message>
 </context>
 <context>
@@ -35,13 +35,13 @@
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="53"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="91"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation></translation>
+        <translation>%1 min. %2 s.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="137"/>
