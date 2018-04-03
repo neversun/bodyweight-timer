@@ -41,7 +41,7 @@
         <location filename="../qml/pages/CircleInterval.qml" line="91"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation>%1 min. %2 s.</translation>
+        <translation>%1 m. %2 s.</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="137"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="83"/>
         <source>reset to default</source>
-        <translation>Réinitialiser</translation>
+        <translation>Réinitialisation</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="93"/>
@@ -218,13 +218,13 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
         <source>instruction</source>
-        <translation></translation>
+        <translation>Instructions</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="149"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation></translation>
+        <translation>%1 m. %2 s.</translation>
     </message>
 </context>
 <context>
@@ -232,37 +232,37 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/Home.qml" line="32"/>
         <source>about</source>
-        <translation></translation>
+        <translation>À propos</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="40"/>
         <source>workouts</source>
-        <translation></translation>
+        <translation>Séances</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="48"/>
         <source>circle interval</source>
-        <translation></translation>
+        <translation>Cercle d&apos;intervalle</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="52"/>
         <source>interval set</source>
-        <translation></translation>
+        <translation>Intervalle de série</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="60"/>
         <source>super set</source>
-        <translation></translation>
+        <translation>Superset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="56"/>
         <source>ladder</source>
-        <translation></translation>
+        <translation>Ladder</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="64"/>
         <source>tabata</source>
-        <translation></translation>
+        <translation>Tabata</translation>
     </message>
 </context>
 <context>
@@ -270,7 +270,7 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="67"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="105"/>
