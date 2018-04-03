@@ -362,37 +362,37 @@ Triple son de cloche = exercice suivant ou fin</translation>
         <location filename="../qml/pages/SuperSet.qml" line="165"/>
         <location filename="../qml/pages/SuperSet.qml" line="168"/>
         <source>current set: %1 of %2</source>
-        <translation></translation>
+        <translation>Série en cours : %1/%2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="171"/>
         <source>sets for each exercise: %1</source>
-        <translation></translation>
+        <translation>Séries pour chaque exercice : %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="183"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>Exercice en cours : %1/%2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="185"/>
         <source>number of exercises: %1</source>
-        <translation></translation>
+        <translation>Nombre d&apos;exercices : %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="198"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="202"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>Reprendre</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="205"/>
         <source>start</source>
-        <translation></translation>
+        <translation>Commencer</translation>
     </message>
 </context>
 <context>
@@ -400,13 +400,13 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="107"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="144"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation></translation>
+        <translation>%1 m. %2 s.</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="230"/>
