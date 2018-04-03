@@ -51,7 +51,7 @@
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="140"/>
         <source>resume</source>
-        <translation>Reprise</translation>
+        <translation>Reprendre</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="143"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="183"/>
         <source>time</source>
-        <translation></translation>
+        <translation>Durée</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="207"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="241"/>
         <source>exercise</source>
-        <translation></translation>
+        <translation>Exercice</translation>
     </message>
 </context>
 <context>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="29"/>
         <source>duration</source>
-        <translation></translation>
+        <translation>Durée</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="32"/>
