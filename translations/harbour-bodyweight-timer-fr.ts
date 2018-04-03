@@ -411,22 +411,22 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="230"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>Exercice en cours : %1/%2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="246"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="250"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>Reprendre</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="253"/>
         <source>start</source>
-        <translation></translation>
+        <translation>Commencer</translation>
     </message>
 </context>
 </TS>
