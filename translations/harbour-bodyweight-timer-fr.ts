@@ -46,17 +46,17 @@
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="137"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="140"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>Reprise</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="143"/>
         <source>start</source>
-        <translation></translation>
+        <translation>Commencer</translation>
     </message>
 </context>
 <context>
