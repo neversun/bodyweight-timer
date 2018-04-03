@@ -64,12 +64,12 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="183"/>
         <source>time</source>
-        <translation>Durée</translation>
+        <translation>Temps</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="207"/>
         <source>set</source>
-        <translation></translation>
+        <translation>Série</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="241"/>
@@ -88,13 +88,13 @@
         <location filename="../qml/pages/ExerciseSettings.qml" line="32"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="37"/>
         <source>duration per set</source>
-        <translation></translation>
+        <translation>Durée par série</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="33"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="38"/>
         <source>sets per exercise</source>
-        <translation></translation>
+        <translation>Séries par exercice</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="34"/>
@@ -102,37 +102,37 @@
         <location filename="../qml/pages/ExerciseSettings.qml" line="43"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="49"/>
         <source>number exercises</source>
-        <translation></translation>
+        <translation>Nombre d&apos;exercices</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="42"/>
         <source>duration per exercise</source>
-        <translation></translation>
+        <translation>Durée par exercice</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="46"/>
         <source>rounds per exercise</source>
-        <translation></translation>
+        <translation>Rounds par exercice</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="47"/>
         <source>duration of active time</source>
-        <translation></translation>
+        <translation>Durée du temps actif</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="48"/>
         <source>duration of pause</source>
-        <translation></translation>
+        <translation>Durée de la pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="83"/>
         <source>reset to default</source>
-        <translation></translation>
+        <translation>Réinitialiser</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="93"/>
         <source>settings: %1</source>
-        <translation></translation>
+        <translation>Paramètres : %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="106"/>
@@ -145,7 +145,7 @@ Tripple bell = end&quot;</source>
 
 Évitez les pauses au maximum.
 
-Triple son de cloche = fin.</translation>
+Triple son de cloche = fin</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="108"/>
@@ -162,7 +162,7 @@ Le premier exercice ne devrait pas causer de douleur.
 
 Son de cloche = série suivante
 Double son de cloche = superset suivant
-Triple son de cloche = fin.</translation>
+Triple son de cloche = fin</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="110"/>
@@ -190,7 +190,7 @@ Already at 1 repetition again and time is not over? Start a new ladder!
 
 Single bell = next exercise
 Tripple bell = end</source>
-        <translation>Entamez une 1ère répétition de l&apos;exercice puis reposez-vous le même nombre de secondes qu&apos;il vous a pris pour la faire. Ensuite, effectuez 2 répétitions du même exercice et reposez-vous, toujours selon le temps dépensé. Ainsi de suite, le plus loin possible, jusqu&apos;aux premières douleurs.
+        <translation>Entamez une 1ère répétition de l&apos;exercice puis reposez-vous le même nombre de secondes qu&apos;il vous a été nécessaire pour l&apos;exécuter. Ensuite, effectuez 2 répétitions du même exercice et reposez-vous, toujours selon le temps dépensé. Ainsi de suite, le plus loin possible, jusqu&apos;aux premières douleurs.
 Dès qu&apos;elles se font ressentir, abaissez le nombre de répétitions une par une, jusqu&apos;à revenir au point de départ.
 
 Le temps n&apos;est toujours pas écoulé ? Recommencez un nouveau ladder et tentez d&apos;aller encore plus loin !
@@ -209,11 +209,11 @@ Double bell = pause time begins
 Tripple bell = next exercise or end.</source>
         <translation>Travaillez les exercices lorsque le temps est au vert. Arrêtez-vous lorsque le temps passe au rouge.
 
-Essayez de trouver votre tempo idéal (répétitions constantes et régulières)!
+Essayez de trouver votre tempo idéal (répétitions constantes et régulières) !
 
 Son de cloche = le temps passe au vert
 Double son de cloche = le temps passe au rouge
-Triple son de cloche = exercice suivant ou fin.</translation>
+Triple son de cloche = exercice suivant ou fin</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
