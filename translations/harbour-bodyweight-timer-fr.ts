@@ -237,17 +237,17 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/Home.qml" line="40"/>
         <source>workouts</source>
-        <translation>Séances</translation>
+        <translation>Entraînements</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="48"/>
         <source>circle interval</source>
-        <translation>Cercle d&apos;intervalle</translation>
+        <translation>Circle Interval</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="52"/>
         <source>interval set</source>
-        <translation>Intervalle de série</translation>
+        <translation>Interval Set</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="60"/>
@@ -276,7 +276,7 @@ Triple son de cloche = exercice suivant ou fin</translation>
         <location filename="../qml/pages/IntervalSet.qml" line="105"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation></translation>
+        <translation>%1 m. %2 s.</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="168"/>
