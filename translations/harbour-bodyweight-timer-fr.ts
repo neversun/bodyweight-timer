@@ -327,22 +327,22 @@ Triple son de cloche = exercice suivant ou fin</translation>
         <location filename="../qml/pages/Ladder.qml" line="147"/>
         <location filename="../qml/pages/Ladder.qml" line="150"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>Exercice en cours : %1/%2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="165"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="169"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>Reprendre</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="172"/>
         <source>start</source>
-        <translation></translation>
+        <translation>Commencer</translation>
     </message>
 </context>
 <context>
@@ -350,13 +350,13 @@ Triple son de cloche = exercice suivant ou fin</translation>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="67"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="102"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
-        <translation></translation>
+        <translation>%1 m. %2 s.</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="165"/>
