@@ -6,28 +6,28 @@
     <message>
         <location filename="../qml/pages/About.qml" line="21"/>
         <source>about</source>
-        <translation></translation>
+        <translation>over</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="30"/>
         <location filename="../qml/pages/About.qml" line="53"/>
         <source>made by %1</source>
-        <translation></translation>
+        <translation>gemaakt door %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="35"/>
         <source>source code</source>
-        <translation></translation>
+        <translation>broncode</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="49"/>
         <source>icon</source>
-        <translation></translation>
+        <translation>pictogram</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="63"/>
         <source>credits</source>
-        <translation></translation>
+        <translation>met dank aan</translation>
     </message>
 </context>
 <context>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="53"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="91"/>
@@ -46,12 +46,12 @@
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="137"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>pauzeren</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="140"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>hervatten</translation>
     </message>
     <message>
         <location filename="../qml/pages/CircleInterval.qml" line="143"/>
@@ -64,7 +64,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="183"/>
         <source>time</source>
-        <translation></translation>
+        <translation>tijd</translation>
     </message>
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="207"/>
@@ -74,7 +74,7 @@
     <message>
         <location filename="../qml/cover/CoverPage.qml" line="241"/>
         <source>exercise</source>
-        <translation></translation>
+        <translation>oefening</translation>
     </message>
 </context>
 <context>
@@ -82,19 +82,19 @@
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="29"/>
         <source>duration</source>
-        <translation></translation>
+        <translation>duur</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="32"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="37"/>
         <source>duration per set</source>
-        <translation></translation>
+        <translation>duur per set</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="33"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="38"/>
         <source>sets per exercise</source>
-        <translation></translation>
+        <translation>sets per oefening</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="34"/>
@@ -102,37 +102,37 @@
         <location filename="../qml/pages/ExerciseSettings.qml" line="43"/>
         <location filename="../qml/pages/ExerciseSettings.qml" line="49"/>
         <source>number exercises</source>
-        <translation></translation>
+        <translation>aantal oefeningen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="42"/>
         <source>duration per exercise</source>
-        <translation></translation>
+        <translation>duur per oefening</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="46"/>
         <source>rounds per exercise</source>
-        <translation></translation>
+        <translation>ronden per oefening</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="47"/>
         <source>duration of active time</source>
-        <translation></translation>
+        <translation>duur van actieve tijd</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="48"/>
         <source>duration of pause</source>
-        <translation></translation>
+        <translation>duur van pauze</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="83"/>
         <source>reset to default</source>
-        <translation></translation>
+        <translation>standaardinstelling herstellen</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="93"/>
         <source>settings: %1</source>
-        <translation></translation>
+        <translation>instellingen: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="106"/>
@@ -141,7 +141,11 @@
 Reduce pauses to a minimum.
 
 Tripple bell = end&quot;</source>
-        <translation></translation>
+        <translation>Doe zoveel ge kunt zolang de oefening duurt
+
+Beperk uw pauzes tot een minimum.
+
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="108"/>
@@ -152,7 +156,13 @@ First pair-exercise should not cause you musle malfunction.
 Single bell = next set
 Double bell = next exercise pair
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Voer tijdens ne set van 3 minuten 6 tot 12 herhalingen uit (stop bij spiermoeheid). Pauzeer de rest van de set.
+
+Één van de drie sets zou tot spiermoeheid moeten leiden. Probeer een moeilijkere of andere oefening als dat niet het geval is.
+
+Één bel = volgende set
+Dubbele bel = volgende oefening
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="110"/>
@@ -163,7 +173,13 @@ Tripple bell = end</source>
 Single bell = next set
 Double bell = next exercise
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Voer tijdens ne set van 3 minuten 6 tot 12 herhalingen uit (stop bij spiermoeheid). Pauzeer de rest van de set.
+
+Één van de drie sets zou tot spiermoeheid moeten leiden. Probeer een moeilijkere of andere oefening als dat niet het geval is.
+
+Één bel = volgende set
+Dubbele bel = volgende oefening
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="112"/>
@@ -174,7 +190,13 @@ Already at 1 repetition again and time is not over? Start a new ladder!
 
 Single bell = next exercise
 Tripple bell = end</source>
-        <translation></translation>
+        <translation>Voer 1 herhaling van een oefening uit en pauzeer even lang als het duurde om de herhaling uit te voeren. Voer daarna 2 herhalingen uit, en pauzeer voor een duur van 2 herhalingen, enzovoort.
+Verminder het aantal herhalingen progressief met 1 bij spiermoeheid.
+
+Staat ge weer op 1 herhaling en is de tijd nog niet op? Begin dan ne nieuwe ladder!
+
+Één bel = volgende oefening
+Drievoudige bel = einde</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="114"/>
@@ -185,12 +207,18 @@ Try to find your ideal tempo (consistent repetitions).
 Single bell = active time begins
 Double bell = pause time begins
 Tripple bell = next exercise or end.</source>
-        <translation></translation>
+        <translation>Doe voort tijdens den actieven tijd (groen). Pauzeer tijdens de pauze (rood).
+
+Probeer uw ideale tempo te vinden (consistente herhalingen).
+
+Één bel = begin van actieven tijd
+Dubbele bel = begin van pauze
+Drievoudige bel = volgende oefening of einde.</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
         <source>instruction</source>
-        <translation></translation>
+        <translation>uitleg</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="149"/>
@@ -204,27 +232,27 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Home.qml" line="32"/>
         <source>about</source>
-        <translation></translation>
+        <translation>over</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="40"/>
         <source>workouts</source>
-        <translation></translation>
+        <translation>trainingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="48"/>
         <source>circle interval</source>
-        <translation></translation>
+        <translation>cirkelinterval</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="52"/>
         <source>interval set</source>
-        <translation></translation>
+        <translation>intervalset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="60"/>
         <source>super set</source>
-        <translation></translation>
+        <translation>superset</translation>
     </message>
     <message>
         <location filename="../qml/pages/Home.qml" line="56"/>
@@ -242,7 +270,7 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="67"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="105"/>
@@ -254,27 +282,27 @@ Tripple bell = next exercise or end.</source>
         <location filename="../qml/pages/IntervalSet.qml" line="168"/>
         <location filename="../qml/pages/IntervalSet.qml" line="171"/>
         <source>current set: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige set: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="174"/>
         <source>sets for each exercise: %1</source>
-        <translation></translation>
+        <translation>sets voor elke oefening: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="186"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="201"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>pauzeren</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="205"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>hervatten</translation>
     </message>
     <message>
         <location filename="../qml/pages/IntervalSet.qml" line="208"/>
@@ -287,7 +315,7 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="52"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="89"/>
@@ -299,17 +327,17 @@ Tripple bell = next exercise or end.</source>
         <location filename="../qml/pages/Ladder.qml" line="147"/>
         <location filename="../qml/pages/Ladder.qml" line="150"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="165"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>pauzeren</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="169"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>hervatten</translation>
     </message>
     <message>
         <location filename="../qml/pages/Ladder.qml" line="172"/>
@@ -322,7 +350,7 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="67"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="102"/>
@@ -334,32 +362,32 @@ Tripple bell = next exercise or end.</source>
         <location filename="../qml/pages/SuperSet.qml" line="165"/>
         <location filename="../qml/pages/SuperSet.qml" line="168"/>
         <source>current set: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige set: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="171"/>
         <source>sets for each exercise: %1</source>
-        <translation></translation>
+        <translation>sets voor elke oefening: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="183"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="185"/>
         <source>number of exercises: %1</source>
-        <translation></translation>
+        <translation>aantal oefeningen: %1</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="198"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>pauzeren</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="202"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>hervatten</translation>
     </message>
     <message>
         <location filename="../qml/pages/SuperSet.qml" line="205"/>
@@ -372,7 +400,7 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="107"/>
         <source>settings</source>
-        <translation></translation>
+        <translation>instellingen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="144"/>
@@ -383,17 +411,17 @@ Tripple bell = next exercise or end.</source>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="230"/>
         <source>current exercise: %1 of %2</source>
-        <translation></translation>
+        <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="246"/>
         <source>pause</source>
-        <translation></translation>
+        <translation>pauzeren</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="250"/>
         <source>resume</source>
-        <translation></translation>
+        <translation>hervatten</translation>
     </message>
     <message>
         <location filename="../qml/pages/Tabata.qml" line="253"/>
