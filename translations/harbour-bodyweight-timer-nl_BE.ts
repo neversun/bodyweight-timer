@@ -117,7 +117,7 @@
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="47"/>
         <source>duration of active time</source>
-        <translation>duur van actieve tijd</translation>
+        <translation>duur van actieven tijd</translation>
     </message>
     <message>
         <location filename="../qml/pages/ExerciseSettings.qml" line="48"/>
