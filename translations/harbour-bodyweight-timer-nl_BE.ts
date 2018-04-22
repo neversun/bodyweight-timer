@@ -141,9 +141,9 @@
 Reduce pauses to a minimum.
 
 Tripple bell = end&quot;</source>
-        <translation>Doe zoveel ge kunt zolang de oefening duurt
+        <translation>Doe’ zo veel als ge kunt zolang dat d’oefening duurt
 
-Beperk uw pauzes tot een minimum.
+Beperkt uw pauzes tot een minimum.
 
 Drievoudige bel = einde</translation>
     </message>
@@ -156,9 +156,9 @@ First pair-exercise should not cause you musle malfunction.
 Single bell = next set
 Double bell = next exercise pair
 Tripple bell = end</source>
-        <translation>Voer tijdens ne set van 3 minuten 6 tot 12 herhalingen uit (stop bij spiermoeheid). Pauzeer de rest van de set.
+        <translation>Voerd tijdens ne set van 3 minuten 6 tot 12 herhalingen uit (stopt bij spiermoeheid). Pauzeerd de rest van de set.
 
-Één van de drie sets zou tot spiermoeheid moeten leiden. Probeer een moeilijkere of andere oefening als dat niet het geval is.
+Één van de drie sets zou tot spiermoeheid moeten leiden. Probeerd een moeilijkere of andere oefening als dat nie het geval is.
 
 Één bel = volgende set
 Dubbele bel = volgende oefening
@@ -173,9 +173,9 @@ Drievoudige bel = einde</translation>
 Single bell = next set
 Double bell = next exercise
 Tripple bell = end</source>
-        <translation>Voer tijdens ne set van 3 minuten 6 tot 12 herhalingen uit (stop bij spiermoeheid). Pauzeer de rest van de set.
+        <translation>Voerd tijdens ne set van 3 minuten 6 tot 12 herhalingen uit (stopt bij spiermoeheid). Pauzeerd de rest van de set.
 
-Één van de drie sets zou tot spiermoeheid moeten leiden. Probeer een moeilijkere of andere oefening als dat niet het geval is.
+Één van de drie sets zou tot spiermoeheid moeten leiden. Probeerd een moeilijkere of andere oefening als dat nie het geval is.
 
 Één bel = volgende set
 Dubbele bel = volgende oefening
@@ -190,10 +190,10 @@ Already at 1 repetition again and time is not over? Start a new ladder!
 
 Single bell = next exercise
 Tripple bell = end</source>
-        <translation>Voer 1 herhaling van een oefening uit en pauzeer even lang als het duurde om de herhaling uit te voeren. Voer daarna 2 herhalingen uit, en pauzeer voor een duur van 2 herhalingen, enzovoort.
-Verminder het aantal herhalingen progressief met 1 bij spiermoeheid.
+        <translation>Voerd 1 herhaling van een oefening uit en pauzeerd even lang als dat het duurde voor d’herhaling uit te voeren. Voerd daarna 2 herhalingen uit, en pauzeerd voor een duur van 2 herhalingen, enzovoort.
+Verminderd het aantal herhalingen progressief met 1 bij spiermoeheid.
 
-Staat ge weer op 1 herhaling en is de tijd nog niet op? Begin dan ne nieuwe ladder!
+Sta’ ge weer op 1 herhaling en is den tijd nog nie op? Begind dan ne nieuwe ladder!
 
 Één bel = volgende oefening
 Drievoudige bel = einde</translation>
@@ -207,9 +207,9 @@ Try to find your ideal tempo (consistent repetitions).
 Single bell = active time begins
 Double bell = pause time begins
 Tripple bell = next exercise or end.</source>
-        <translation>Doe voort tijdens den actieven tijd (groen). Pauzeer tijdens de pauze (rood).
+        <translation>Doe’ voort tijdens den actieven tijd (groen). Pauzeerd tijdens de pauze (rood).
 
-Probeer uw ideale tempo te vinden (consistente herhalingen).
+Probeerd uw ideaal tempo te vinden (consistente herhalingen).
 
 Één bel = begin van actieven tijd
 Dubbele bel = begin van pauze
