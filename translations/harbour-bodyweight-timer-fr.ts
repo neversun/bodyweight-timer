@@ -148,7 +148,7 @@ Tripple bell = end&quot;</source>
 Triple son de cloche = fin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExerciseSettings.qml" line="108"/>
+        <location filename="../qml/pages/ExerciseSettings.qml" line="112"/>
         <source>In a 4 minute set do the first superset (a pair of 2 exercises).
 Do at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. 
 First pair-exercise should not cause you musle malfunction.
@@ -165,7 +165,7 @@ Double son de cloche = superset suivant
 Triple son de cloche = fin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExerciseSettings.qml" line="110"/>
+        <location filename="../qml/pages/ExerciseSettings.qml" line="120"/>
         <source>In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.
 
 1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.
@@ -182,7 +182,7 @@ Double son de cloche = exercice suivant
 Triple son de cloche = fin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExerciseSettings.qml" line="112"/>
+        <location filename="../qml/pages/ExerciseSettings.qml" line="128"/>
         <source>Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.
 On muscle malfunction reduce the repetitions by 1, then by another and so forth.
 
@@ -199,7 +199,7 @@ Son de cloche = exercice suivant
 Triple son de cloche = fin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExerciseSettings.qml" line="114"/>
+        <location filename="../qml/pages/ExerciseSettings.qml" line="136"/>
         <source>During active time (green) move on. During pause time (red) pause.
 
 Try to find your ideal tempo (consistent repetitions).
@@ -216,12 +216,12 @@ Double son de cloche = le temps passe au rouge
 Triple son de cloche = exercice suivant ou fin</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExerciseSettings.qml" line="118"/>
+        <location filename="../qml/pages/ExerciseSettings.qml" line="146"/>
         <source>instruction</source>
         <translation>Instructions</translation>
     </message>
     <message>
-        <location filename="../qml/pages/ExerciseSettings.qml" line="149"/>
+        <location filename="../qml/pages/ExerciseSettings.qml" line="177"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
         <translation>%1 m. %2 s.</translation>

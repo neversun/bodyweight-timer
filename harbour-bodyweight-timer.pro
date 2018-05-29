@@ -54,4 +54,7 @@ CONFIG += sailfishapp_i18n
 # following TRANSLATIONS line. And also do not forget to
 # modify the localized app name in the the .desktop file.
 TRANSLATIONS += \
-    translations/harbour-bodyweight-timer-de.ts
+    translations/harbour-bodyweight-timer-de.ts \
+    translations/harbour-bodyweight-timer-fr.ts \
+    translations/harbour-bodyweight-timer-nl.ts \
+    translations/harbour-bodyweight-timer-nl_BE.ts \
