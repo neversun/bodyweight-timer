@@ -13,7 +13,7 @@ Name:       harbour-bodyweight-timer
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Bodyweight Timer
-Version:    1.2
+Version:    1.3
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
