@@ -17,12 +17,12 @@ Page{
                 exercisePage.timePerSet = columValues.value1.value
                 exercisePage.setsPerExercise = columValues.value2.value
                 exercisePage.roundsPerExercise = columValues.value3.value
+
                 appWindow.exerciseActive = true
-                appWindow.exerciseActiveName = title
+                appWindow.activeExercisePageName = page
+                appWindow.activeExercisePageTitle = title
             })
 
-            appWindow.exerciseActive = true
-            appWindow.exerciseActiveName = title
         }
     }
 

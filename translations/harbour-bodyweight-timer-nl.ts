@@ -33,28 +33,28 @@
 <context>
     <name>CircleInterval</name>
     <message>
-        <location filename="../qml/pages/CircleInterval.qml" line="53"/>
+        <location filename="../qml/pages/CircleInterval.qml" line="55"/>
         <source>settings</source>
         <translation>instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CircleInterval.qml" line="91"/>
+        <location filename="../qml/pages/CircleInterval.qml" line="93"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/CircleInterval.qml" line="137"/>
+        <location filename="../qml/pages/CircleInterval.qml" line="139"/>
         <source>pause</source>
         <translation>pauzeren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CircleInterval.qml" line="140"/>
+        <location filename="../qml/pages/CircleInterval.qml" line="142"/>
         <source>resume</source>
         <translation>hervatten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/CircleInterval.qml" line="143"/>
+        <location filename="../qml/pages/CircleInterval.qml" line="145"/>
         <source>start</source>
         <translation></translation>
     </message>
@@ -313,34 +313,34 @@ Drievoudige bel = volgende oefening of einde.</translation>
 <context>
     <name>Ladder</name>
     <message>
-        <location filename="../qml/pages/Ladder.qml" line="52"/>
+        <location filename="../qml/pages/Ladder.qml" line="54"/>
         <source>settings</source>
         <translation>instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Ladder.qml" line="89"/>
+        <location filename="../qml/pages/Ladder.qml" line="91"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Ladder.qml" line="147"/>
-        <location filename="../qml/pages/Ladder.qml" line="150"/>
+        <location filename="../qml/pages/Ladder.qml" line="149"/>
+        <location filename="../qml/pages/Ladder.qml" line="152"/>
         <source>current exercise: %1 of %2</source>
         <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Ladder.qml" line="165"/>
+        <location filename="../qml/pages/Ladder.qml" line="167"/>
         <source>pause</source>
         <translation>pauzeren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Ladder.qml" line="169"/>
+        <location filename="../qml/pages/Ladder.qml" line="171"/>
         <source>resume</source>
         <translation>hervatten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Ladder.qml" line="172"/>
+        <location filename="../qml/pages/Ladder.qml" line="174"/>
         <source>start</source>
         <translation></translation>
     </message>
@@ -348,49 +348,49 @@ Drievoudige bel = volgende oefening of einde.</translation>
 <context>
     <name>SuperSet</name>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="67"/>
+        <location filename="../qml/pages/SuperSet.qml" line="66"/>
         <source>settings</source>
         <translation>instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="102"/>
+        <location filename="../qml/pages/SuperSet.qml" line="101"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="165"/>
-        <location filename="../qml/pages/SuperSet.qml" line="168"/>
+        <location filename="../qml/pages/SuperSet.qml" line="164"/>
+        <location filename="../qml/pages/SuperSet.qml" line="167"/>
         <source>current set: %1 of %2</source>
         <translation>huidige set: %1 van %2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="171"/>
+        <location filename="../qml/pages/SuperSet.qml" line="170"/>
         <source>sets for each exercise: %1</source>
         <translation>sets voor elke oefening: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="183"/>
+        <location filename="../qml/pages/SuperSet.qml" line="182"/>
         <source>current exercise: %1 of %2</source>
         <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="185"/>
+        <location filename="../qml/pages/SuperSet.qml" line="184"/>
         <source>number of exercises: %1</source>
         <translation>aantal oefeningen: %1</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="198"/>
+        <location filename="../qml/pages/SuperSet.qml" line="197"/>
         <source>pause</source>
         <translation>pauzeren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="202"/>
+        <location filename="../qml/pages/SuperSet.qml" line="201"/>
         <source>resume</source>
         <translation>hervatten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/SuperSet.qml" line="205"/>
+        <location filename="../qml/pages/SuperSet.qml" line="204"/>
         <source>start</source>
         <translation></translation>
     </message>
@@ -398,33 +398,33 @@ Drievoudige bel = volgende oefening of einde.</translation>
 <context>
     <name>Tabata</name>
     <message>
-        <location filename="../qml/pages/Tabata.qml" line="107"/>
+        <location filename="../qml/pages/Tabata.qml" line="106"/>
         <source>settings</source>
         <translation>instellingen</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Tabata.qml" line="144"/>
+        <location filename="../qml/pages/Tabata.qml" line="143"/>
         <source>%1m %2s</source>
         <extracomment>m = minute, s = second</extracomment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Tabata.qml" line="230"/>
+        <location filename="../qml/pages/Tabata.qml" line="229"/>
         <source>current exercise: %1 of %2</source>
         <translation>huidige oefening: %1 van %2</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Tabata.qml" line="246"/>
+        <location filename="../qml/pages/Tabata.qml" line="245"/>
         <source>pause</source>
         <translation>pauzeren</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Tabata.qml" line="250"/>
+        <location filename="../qml/pages/Tabata.qml" line="249"/>
         <source>resume</source>
         <translation>hervatten</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Tabata.qml" line="253"/>
+        <location filename="../qml/pages/Tabata.qml" line="252"/>
         <source>start</source>
         <translation></translation>
     </message>

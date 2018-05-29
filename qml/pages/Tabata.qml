@@ -18,12 +18,11 @@ Page{
                 exercisePage.activeTimeDuration = columValues.value2.value
                 exercisePage.pauseTimeDuration = columValues.value3.value
                 exercisePage.numberOfExercises = columValues.value3.value
-                appWindow.exerciseActive = true
-                appWindow.exerciseActiveName = title
-            })
 
-            appWindow.exerciseActive = true
-            appWindow.exerciseActiveName = title
+                appWindow.exerciseActive = true
+                appWindow.activeExercisePageName = page
+                appWindow.activeExercisePageTitle = title
+            })
         }
     }
 

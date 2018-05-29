@@ -68,7 +68,7 @@ CoverBackground {
     }
 
     function setColorActiveTime(isActiveTime) {
-        if(appWindow.exerciseActiveName === "Tabata") {
+        if(appWindow.activeExercisePageName === "Tabata") {
             if(exerciseActiveTime) {
                 coverTime.color = activeTimeColor
             } else {
@@ -79,7 +79,7 @@ CoverBackground {
 
     // TODO: Peeking shows, if changed, old status
     onStatusChanged: {
-        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Circle interval") {
+        if(status !== Cover.Inactive && appWindow.activeExercisePageName === "CircleInterval") {
             showPlaceholder();
             coverPause.enabled = true
             coverTitle.visible = true
@@ -88,31 +88,7 @@ CoverBackground {
 
             placeholder.visible = false
         }
-        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Interval set") {
-            showPlaceholder();
-            coverPause.enabled = true
-            coverTitle.visible = true
-            coverTime.visible = true
-            coverExerciseNumber.visible = true
-            coverSetNumber.visible = true
-            coverTimeLabel.visible = true
-            coverSetLabel.visible = true
-            coverExerciseLabel.visible = true
-
-            placeholder.visible = false
-        }
-        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Ladder") {
-            showPlaceholder();
-            coverPause.enabled = true
-            coverTitle.visible = true
-            coverTime.visible = true
-            coverExerciseNumber.visible = true
-            coverTimeLabel.visible = true
-            coverExerciseLabel.visible = true
-
-            placeholder.visible = false
-        }
-        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Super set") {
+        if(status !== Cover.Inactive && appWindow.activeExercisePageName === "IntervalSet") {
             showPlaceholder();
             coverPause.enabled = true
             coverTitle.visible = true
@@ -125,7 +101,31 @@ CoverBackground {
 
             placeholder.visible = false
         }
-        if(status !== Cover.Inactive && appWindow.exerciseActiveName === "Tabata") {
+        if(status !== Cover.Inactive && appWindow.activeExercisePageName === "Ladder") {
+            showPlaceholder();
+            coverPause.enabled = true
+            coverTitle.visible = true
+            coverTime.visible = true
+            coverExerciseNumber.visible = true
+            coverTimeLabel.visible = true
+            coverExerciseLabel.visible = true
+
+            placeholder.visible = false
+        }
+        if(status !== Cover.Inactive && appWindow.activeExercisePageName === "SuperSet") {
+            showPlaceholder();
+            coverPause.enabled = true
+            coverTitle.visible = true
+            coverTime.visible = true
+            coverExerciseNumber.visible = true
+            coverSetNumber.visible = true
+            coverTimeLabel.visible = true
+            coverSetLabel.visible = true
+            coverExerciseLabel.visible = true
+
+            placeholder.visible = false
+        }
+        if(status !== Cover.Inactive && appWindow.activeExercisePageName === "Tabata") {
             showPlaceholder();
             coverPause.enabled = true
             coverTitle.visible = true
@@ -175,7 +175,7 @@ CoverBackground {
                right: parent.right
             }
             color: Theme.primaryColor
-            text: appWindow.exerciseActiveName
+            text: appWindow.activeExercisePageTitle
         }
 
         Label {

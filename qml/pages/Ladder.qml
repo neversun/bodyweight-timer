@@ -16,8 +16,10 @@ Page{
             DB.getDatabaseValuesFor(page, function (columValues) {
                 exercisePage.timePerSet = columValues.value1.value
                 exercisePage.roundsPerExercise = columValues.value2.value
+
                 appWindow.exerciseActive = true
-                appWindow.exerciseActiveName = title
+                appWindow.activeExercisePageName = page
+                appWindow.activeExercisePageTitle = title
             })
         }
     }

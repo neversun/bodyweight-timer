@@ -16,8 +16,10 @@ Page{
         if(status === PageStatus.Activating) {
             DB.getDatabaseValuesFor(page, function (columValues) {
                 exercisePage.timePerSet = columValues.value1.value
+
                 appWindow.exerciseActive = true
-                appWindow.exerciseActiveName = title
+                appWindow.activeExercisePageName = page
+                appWindow.activeExercisePageTitle = title
             })
         }
     }

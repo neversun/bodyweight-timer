@@ -41,7 +41,8 @@ ApplicationWindow
     property bool timerRunning: false
     property bool timerStartedOnce: false
     property bool exerciseActive: false
-    property string exerciseActiveName
+    property string activeExercisePageName: ''
+    property string activeExercisePageTitle: ''
     property int currentTime
     property int maximalTime
     property int currentExerciseNumber
