@@ -57,11 +57,11 @@ Page {
             }
             ListElement {
                 page: "SuperSet"
-                title: qsTr("super set")
+                title: qsTr("superset")
             }
             ListElement {
                 page: "Tabata"
-                title: qsTr("tabata")
+                title: qsTr("Tabata")
             }
         }
 

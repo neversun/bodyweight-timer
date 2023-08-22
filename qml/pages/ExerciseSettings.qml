@@ -107,35 +107,32 @@ Page {
 
 Reduce pauses to a minimum.
 
-Tripple bell = end"')
+Tripple bell = end.')
                 } else if (page === 'SuperSet') {
-                    return qsTr('In a 4 minute set do the first superset (a pair of 2 exercises).
-Do at repetition 1 to 5 the first pair-exercise, and at repetition 6 to 12 the second pair-exercise. 
-First pair-exercise should not cause you musle malfunction.
+                    return qsTr('In a 4 minute set, do the first superset (pair of 2 exercises).
+Do the first superset at repetition 1-5 without muscle fatigue, and the second at 6-12.
 
 Single bell = next set
 Double bell = next exercise pair
-Tripple bell = end')
+Tripple bell = end.')
                 } else if (page === 'IntervalSet') {
-                    return qsTr('In a 3 minute set do 6 to 12 repetitions (stop on muscle malfunction). Pause rest of the set.
+                    return qsTr('In a 3 minute set without muscle fatigue, do 6 to 12 repetitions. Pause for the rest of the set.
 
-1 of 3 sets should cause you to muscle malfunction. Do harder/another exercise if not.
+Number 3 of 3 sets should cause muscle fatigue. Work harder or do another exercise if not.
 
 Single bell = next set
 Double bell = next exercise
-Tripple bell = end')
+Tripple bell = end.')
                 } else if (page === 'Ladder') {
-                    return qsTr('Do 1 repetition of an exercise and pause the time it took you do to so. Then do 2 repetitions and pause the time it took you to do these 2. And so forth.
-On muscle malfunction reduce the repetitions by 1, then by another and so forth.
-
-Already at 1 repetition again and time is not over? Start a new ladder!
+                    return qsTr('Do 1 repetition of an exercise and pause the time it took you do to so. Then 2 reps, a pause for the time it took to do 2, and so on.
+Upon muscle fatigue, do 1 less rep, till you are down to 1 with time left over. Then start another ladder!
 
 Single bell = next exercise
-Tripple bell = end')
+Tripple bell = end.')
                 } else if (page === 'Tabata') {
-                    return qsTr('During active time (green) move on. During pause time (red) pause.
+                    return qsTr('Move on in active time (green). Pause in pause time (red).
 
-Try to find your ideal tempo (consistent repetitions).
+Adjust to your ideal tempo (consistent repetitions).
 
 Single bell = active time begins
 Double bell = pause time begins
